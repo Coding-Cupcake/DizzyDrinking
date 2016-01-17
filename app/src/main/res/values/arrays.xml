@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="classics">
+
+        <item>Drink an arbitrary shot.</item>
+        <item>Drink an arbitrary shot with at least 35% alc./vol.</item>
+
+        <item>The person to your right must drink an arbitrary shot.</item>
+        <item>The person to your right must drink an arbitrary shot with at least 35% alc./vol.</item>
+
+        <item>The person to your left must drink an arbitrary shot.</item>
+        <item>The person to your left must drink an arbitrary shot with at least 35% alc./vol.</item>
+
+        <item>Each person whose prename contains more letters as yours must drink an arbitrary shot.</item>
+        <item>Each person whose prename contains less letters as yours must drink an arbitrary shot.</item>
+
+        <item>Everyone who does not know your full birthday (yyyy-mm-dd) must drink an arbitrary shot.</item>
+        <item>You may drink an epic belt of beer!</item>
+
+        <item>Relax and take a time-out! For the next two games you are immune, i.e. the next two times you would have to drink you can choose if you want to or not.</item>
+        <item>Choose a drinking mate who has to drink the same as you do for the next two times.</item>
+
+        <item>Choose any person who has to choose and drink an arbitrary shot.</item>
+        <item>Choose any person and determine which shot she or he has to drink.</item>
+
+        <item>Think of any category (e.g. car brand) and start the round (e.g. with Ford). The first one who is not able to continue must drink a shot.</item>
+
+        <item>Start counting clockwisely, with you being number 1. The one with number 18 must drink a shot.</item>
+        <item>Start counting clockwisely, with you being number 1. The one with number 11 must drink a shot.</item>
+
+        <item>Flip a coin. If head, drink a shot. If tail, nothing happens.</item>
+        <item>Flip a coin. If head, drink a shot. If tail, try it once again.</item>
+
+        <!--Games from the users-->
+        <item>Divide the number of participating players by four and drink that number of shots. If the result is odd, round up.</item>
+
+        <item>Each person who is younger than you must drink a shot.</item>
+        <item>Each person who is older than you must drink a shot.</item>
+
+        <item>Starting with you each person must mention a noun with four letters. Play it clockwise with 5 seconds thinking time per player and drink a shot if you can not mention a word within that time.</item>
+        <item>YOU are the CHOSEN ONE: Drink a belt of your favorite available alcoholic drink!</item>
+
+        <item>Each person whose birthday numbers (only the day) appear in your birthday must drink a shot. Example: Your birthday is on August 02, so everyone whose birthday contains a 0 or 2 must drink.</item>
+        <item>Everyone whose prename contains the first letter of your prename (no matter at which position) has to drink a shot.</item>
+
+        <item>Tell the funniest joke you know. Everyone who starts laughing must drink a shot. If no one laughs you have to drink a shot.</item>
+        <item>Choose a person who has to drink for you the next two times. Roughly speaking, redirect the next two drinks.</item>
+
+        <item>Choose a player who has to drink 0.2l beer (or 0.1l (sparkling) wine) out of a glass within 8 seconds. If the player fails she or he has to drink an additional arbitrary shot.</item>
+
+        <item>Play one round rock-paper-scissors with the person to your right. The loser must drink a shot. </item>
+        <item>Play one round rock-paper-scissors with the person to your left. The loser must drink a shot. </item>
+
+        <item>Choose a topic, such as "City" or "car brand" and mention a word starting with "A". The player to your right mentions one starting with "B" and so on. 5s time per player, otherwise the round stops and the player must drink a shot.</item>
+        <item>Choose a noun (Ape). The next player takes the last letter and builds a new noun starting with that letter (Eagle). Play it clockwise with 5 seconds time per person. The player who needs more time must drink a shot.</item>
+     </string-array>
+
+     <string-array name="daring">
+
+         <item>Lick on something sour tasting. If nothing sour tasting available the person to your right determines what you have to lick on. </item>
+         <item>It is your choice: Either you gain a kiss from a participating player (cheek or mouth) or you have to drink two shots of the most disgusting drink according to the other players.</item>
+         <item>You are a real pioneer: Drink a glass (0.1l) of a special drink mixed by the other players. The drink can consist out of maximum three (totally) different (non)alcoholic drinks.</item>
+
+
+         <item>Start throwing any object to another player who tries to catch the object and throws it to any other player, until someone throws it badly or does not catch it. In this case the player must drink an shot with at least 35% alc./vol.</item>
+         <item>Choose a player who has to drink 0.5l beer (or 0.25l (sparkling) wine) out of a glass within 10 seconds. If the player fails she or he has to drink an additional shot with at least 35% alc.vol.</item>
+         <item>Pass your smartphone around. Each player may enter three words for a message and pass it further to the neighbor. Back to you the message must be sent to a person of your choice who is currently not present.</item>
+
+
+         <!--Games from the users-->
+         <item>Starting with you everyone has to take off a piece of clothing clockwise. The first player who stops undressing must drink three shots (accessories such as chains, watches, etc. are not accepted).</item>
+         <item>If possible choose 3 other players, otherwise 2 or 1. Measured against the body height drink as follows: 0.1l for the smallest one and ascending 0.2l, 0.3l and 0.4l.</item>
+         <item>Choose a person who has to drink for you the next five times. Roughly speaking, redirect the next five drinks.</item>
+         <item>From now on you have to drink every time the person to your right has to drink.</item>
+         <item>From now on you have to drink every time the person to your left has to drink.</item>
+         <item>Divide the number of participating players by two and drink that number of shots. If the result is odd, round up.</item>
+         <item>You and the person on your opposite have to look in each others eyes. Grimaces allowed, speaking not. The first one start laughing must drink a shot. If no one laughs after 15 second both must drink.</item>
+
+         <item>Each player may ask you a (dirty) question you have to answer honestly. You have to drink a shot for each question you do not answer.</item>
+         <item>Ask an estimation question where the exact answer is preferably only known by you (e.g. the weight of your dog). The player with the worst guess must drink a shot.</item>
+         <item>Choose a word to be banned for the rest of the game. Every time a player mentions this word, he/she has to drink a shot.</item>
+         <item>Fill up to glasses of beer with 0.3l each (or 0.2l (sparkling) wine). Now start drinking simultaneously with the player to your left. The slower one must drink an additional shot.</item>
+         <item>Think of any well-known (fictive) person. Now each player asks a yes/no question clockwise. The first one who guesses right does not need to drink the next two games he/she will be mentioned.</item>
+         <item>Close your eyes. Now an arbitrary player has to give you the hand and you need to guess to whom the hand belong to by feeling it. If you guess wrong you must drink a shot.</item>
+
+     </string-array>
+
+    <string-array name="gamesForAll_Classic">
+
+        <item><item>Place a container on the middle of the table. Each player tries to flip a coin into the container. In case of success, the player can choose any other player who has to drink an arbitrary shot.</item></item>
+        <item>The physically tallest player has to drink a shot together with the smallest player. Both must drink the same shot, which is determined by the player who wins one round of rock-paper-scissors.</item>
+        <item>The oldest player has to drink a shot together with the youngest player. Both must drink the same shot, which is determined by the player who wins one round of rock-paper-scissors.</item>
+
+        <item>Place any empty glass anywhere. Each player now tries to throw a coin into the glass from a distance of 2 meters. If you fail, drink an arbitrary shot.</item>
+        <item>All players drink one shot together (must not be the same shot for all).</item>
+
+
+    </string-array>
+
+    <string-array name="gamesForAll_Daring">
+
+        <item>Each player places a glass filled with an alcoholic drink, such as beer or any long drink, in front of her/him. Everyone has one attempt to throw a bottle cap into the glass of the player sitting opposite. In case of success, the owner of the glass must drink it in one go.</item>
+        <item>Internet required: Search online for porn titles and start reading the first one. Who starts laughing (reader as well) must drink a shot or a big belt of beer. Each player may read one title.</item>
+        <item>Each person mentions a well known movie and starts a round, where the other player must mention an actor of this movie. Each round is played clockwise and stops if someone can not mention an actor anymore. This player must drink a shot.</item>
+
+        <item>Each player wearing ear rings must drink an arbitrary shot.</item>
+        <item>Each player who has slept with at least 10 different people must drink an arbitrary shot.</item>
+        <item>Each player who has vomited due to alcohol at least once must drink an arbitrary shot.</item>
+        <item>Choose the most drunken player by voting. This player has to close the eyes and stand on one leg for 10 seconds. In case of success, this player may choose another player to drink a shot, otherwise nothing happens.</item>
+
+        <item>Take any bottle and put it on the middle of the desk. Each player may turn the bottle one time. Each time the player the bottle is pointing to must drink either a shot or 0.2l beer (or 0.1l (sparkling) wine) in one go.</item>
+        <item>Take any bottle and put it on the middle of the desk. Each player may turn the bottle one time. Each time the player the bottle is pointing to must kiss (cheek/mouth) someone or drink a shot.</item>
+        <item>Build two teams and choose one neutral player. This player whispers a word into every ones ear successively. Now this word has to be explained using pantomime. If the team does not guess the word right within 1 minute, the whole team must drink a shot.</item>
+        <item>Build two teams and choose one neutral player. This player whispers a song into every ones ear successively. Now this song has to be hummed. If the team does not guess the song right within 1 minute, the whole team must drink a shot.</item>
+
+    </string-array>
+
+ </resources>

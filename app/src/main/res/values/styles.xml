@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyHoloLight" parent="Theme.AppCompat.Light">
+        <item name="android:popupMenuStyle">@style/popupMenuStyle</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.Example.Widget</item>
+    </style>
+    <style name="popupMenuStyle" parent="@android:style/Widget.PopupMenu">
+    </style>
+    <style name="Theme.Example.Widget" parent="@style/Theme.AppCompat">
+        <item name="popupMenuStyle">@style/popupMenuStyle</item>
+        <item name="dropDownListViewStyle">@style/DropDownListView.Example</item>
+    </style>
+    <style name="DropDownListView.Example" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:listSelector">@android:color/holo_green_dark</item>
+    </style>
+
+</resources>

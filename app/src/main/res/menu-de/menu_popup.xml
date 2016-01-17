@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/quit"
+        android:title="Spieler zurücksetzen"
+        android:icon="@drawable/ic_clear_normal"/>
+
+    <item
+        android:id="@+id/mod"
+        android:title="Modus wechseln"
+        android:icon="@drawable/ic_clear_normal"/>
+
+    <item
+        android:id="@+id/info"
+        android:title="Informationen"
+        android:icon="@drawable/ic_clear_normal"/>
+
+    <item
+        android:id="@+id/quitApp"
+        android:title="Beenden"
+        android:icon="@drawable/ic_clear_normal"/>
+
+
+
+</menu>

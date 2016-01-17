@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.patrick.dizzydrinking.ContactActivity"
+    android:id="@+id/what"
+    android:background="@drawable/background">
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/cancelList"
+        android:layout_marginBottom="38dp"
+        android:src="@drawable/button_exit60"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="false" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sendContacts"
+        android:src="@drawable/button_add60"
+        android:layout_alignTop="@+id/cancelList"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/android:list"
+        android:layout_alignLeft="@+id/cancelList"
+        android:layout_alignStart="@+id/cancelList"
+        android:layout_marginBottom="30dp"
+        android:layout_alignRight="@+id/sendContacts"
+        android:layout_alignEnd="@+id/sendContacts"
+        android:layout_above="@+id/cancelList"
+        android:layout_below="@+id/chooseNames" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/contactNames"
+        android:id="@+id/chooseNames"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:clickable="false"
+        android:textSize="20dp"
+        android:layout_above="@+id/editText"
+        android:background="@drawable/background_textbox"
+        android:layout_alignRight="@+id/sendContacts"
+        android:layout_alignEnd="@+id/sendContacts" />
+
+</RelativeLayout>

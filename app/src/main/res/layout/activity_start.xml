@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".StartActivity"
+    android:background="@drawable/background"
+    android:id="@+id/start">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name, ..."
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="120dp"
+        android:layout_alignBottom="@+id/contactPicker"
+        android:elegantTextHeight="false"
+        android:layout_alignTop="@+id/contactPicker"
+        android:autoText="false"
+        android:background="@android:drawable/dialog_holo_light_frame" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/contactPicker"
+        android:src="@drawable/button_contacts_mod"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/playersParticipating"
+        android:layout_alignEnd="@+id/playersParticipating"
+        android:background="@android:drawable/dialog_holo_light_frame" />
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendInput"
+        android:focusableInTouchMode="false"
+        android:src="@drawable/button_add_mod"
+        android:layout_alignTop="@+id/contactPicker"
+        android:layout_toLeftOf="@+id/contactPicker"
+        android:layout_marginRight="0dp"
+        android:background="@android:drawable/dialog_holo_light_frame" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/nextChallenge"
+        android:layout_below="@+id/playersParticipating"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/enterNames"
+        android:id="@+id/enterNames"
+        android:layout_alignRight="@+id/contactPicker"
+        android:layout_alignEnd="@+id/contactPicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:clickable="false"
+        android:textSize="20dp"
+        android:layout_above="@+id/editText"
+        android:background="@drawable/background_textbox"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/playersList"
+        android:id="@+id/playersParticipating"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:clickable="false"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView"
+        android:background="@drawable/background_textbox" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/nextChallenge"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/button_startgame"  />
+
+
+</RelativeLayout>

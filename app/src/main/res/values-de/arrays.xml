@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="classics">
+
+        <item>Trinke einen beliebigen Shot.</item>
+        <item>Trinke einen beliebigen Shot mit mindestens 35% vol.</item>
+
+        <item>Die Person zu deiner Rechten muss einen beliebigen Shot trinken.</item>
+        <item>Die Person zu deiner Rechten muss einen beliebigen Shot trinken mit mind. 35% vol.</item>
+
+        <item>Die Person zu deiner Linken muss einen beliebigen Shot trinken.</item>
+        <item>Die Person zu deiner Linken muss einen beliebigen Shot trinken mit mind. 35% vol.</item>
+
+        <item>Jede Person, deren Vorname länger als deiner ist, trinkt einen beliebigen Shot.</item>
+        <item>Jede Person, deren Vorname kürzer als deiner ist, trinkt einen beliebigen Shot.</item>
+
+        <item>Alle Personen, die nicht deinen Geburtstag (vollständiges Datum) kennen, trinken einen beliebigen Shot.</item>
+
+        <item>Du darfst dir einen fürstlichen Schluck Bier gönnen.</item>
+
+        <item>Du darfst dir eine Ruhepause gönnen - Glückspilz! Dies bedeutet, dass du für die nächsten zwei Spiele die dich betreffen immun bist, also nichts trinken musst.</item>
+
+        <item>Wähle einen Trinkfreund, der die nächsten zweimal mit dir trinken muss (was auch immer du trinkst).</item>
+        <item>Wähle eine Person, die nun einen beliebigen Shot auswählen und trinken muss.</item>
+        <item>Wähle eine Person und bestimme welchen Shot sie trinken muss.</item>
+
+        <item>Nenne eine Kategorie (z.B. Automarke) und starte die Runde (z.B. mit VW). Die erste Person, die keinen passenden Begriff mehr nennen kann, muss einen Shot trinken.</item>
+
+        <item>Zähle durch im Uhrzeigersinn, beginnend mit dir als Nummer 1. Die Person mit der Nummer 18 muss einen Shot trinken. </item>
+        <item>Zähle durch im Uhrzeigersinn, beginnend mit dir als Nummer 1. Die Person mit der Nummer 11 muss einen Shot trinken. </item>
+
+        <item>Bestimme ein zusammengesetztes Wort (Holzhaus). Die nächste Person nimmt dann den letzten Teil und erschafft ein neues solches Wort (Hausdach), usw. Max. 5s Zeit pro Person, sonst einen Shot trinken. </item>
+
+        <item>Wirf eine Münze. Bei Kopf musst du einen Shot trinken, bei Zahl passiert nichts.</item>
+        <item>Wirf eine Münze. Bei Kopf musst du einen Shot trinken, bei Zahl musst du nochmal werfen.</item>
+
+        <!--Games from the users-->
+        <item>Teile die Anzahl Mitspieler durch vier und trinke soviele Shots. Ist das Ergebnis ungerade, wird aufgerundet.</item>
+        <item>Jede Person, die jünger ist als du, muss einen Shot trinken.</item>
+        <item>Jede Person, die älter ist als du, muss einen Shot trinken.</item>
+
+        <item>Beginnend bei dir, nennt jeder abwechselnd im Uhrzeigersinn ein Substantiv mit vier Buchstaben innerhalb von jeweils 5 Sekunden. Wem nichts mehr zeitig einfällt, muss einen Shot trinken.</item>
+        <item>DU bist der bzw. die AUSERWÄHLTE: Trinke einen Schluck deines gerade vorhandenen Lieblingsgetränks!</item>
+
+
+        <item>Jede Person, deren Geburtstagszahl(en) in deiner (nur Tag relevant) vorkommen, muss einen Shot trinken. Bsp: Du hast am 06. Juli Geburtstag, also müssen alle die eine 0 oder 6 im Tag haben trinken.</item>
+
+        <item>Alle, die den ersten Buchstaben deines Vornamens in ihrem Vornamen tragen (unabhängig von der Position) müssen einen Shot trinken.</item>
+        <item>Erzähle den trockensten Witz, den du kennst. Die Personen die lachen, müssen einen Shot trinken. Lacht niemand, musst du einen trinken.</item>
+
+        <item>Wähle eine Person aus, die die nächsten zwei Male für dich trinken muss, d.h. an die deine nächsten zwei Aufgaben weitergeleitet werden.</item>
+
+        <item>Wähle eine Person, die 0.2l Bier (oder 0.1l Wein/Sekt) innerhalb von 8 Sekunden aus einem Glas trinken muss. Gelingt dies nicht innerhalb der Zeit, muss sie zusätzlich einen beliebigen Shot trinken. </item>
+
+        <item>Spiele eine Runde Schere, Stein, Papier mit der Person zu deiner Rechten. Wer verliert, muss einen Shot trinken.</item>
+        <item>Spiele eine Runde Schere, Stein, Papier mit der Person zu deiner Linken. Wer verliert, muss einen Shot trinken.</item>
+
+        <item>Bestimme eine Kategorie (z.B. Stadt/Automarke) und nenne einen Begriff mit "A" beginnend, die nächste Person rechts dann mit "B", etc. Pro Antwort 5s Zeit, sonst Runde beendet und einen Shot trinken. </item>
+        <item>Nenne ein Substantiv (Haus). Im Uhrzeigersinn muss nun die nächste Person mit dem letzten Buchstaben beginnend weiter machen (Schlange). 5s Zeit pro Person, sonst einen Shot trinken.</item>
+
+    </string-array>
+
+     <string-array name="daring">
+
+         <item>Lecke an etwas saurem. Falls nichts saures vorhanden, bestimmt die Person zu deiner Rechten an was du lecken musst.</item>
+         <item>Du hast die Wahl: Ergattere einen Kuss einer beliebigen mitspielenden Person (Backe oder Mund) oder trinke zwei Shots des (laut deinen Mitspielern) ekligsten Getränks des Abends.</item>
+         <item>Du bist ein echter Pionier: Trinke ein Glas (max. 0.1l) eines von deinen Mitspielern gemischten Getränks, das aus max. drei verschiedenen Getränken besteht (welche in keinster Weise irgendwie zusammenpassen müssen). </item>
+
+         <item>Werft euch einen Gegenstand zu, beginnend bei dir. Die Runde ist beendet, wenn dieser nicht gefangen wird bzw. sehr schlecht geworfen wurde. Diese Person muss nun 0.3l Bier oder einen Shot mit mind. 35% vol. trinken.</item>
+         <item>Wähle eine Person, die 0.5l Bier (oder 0.25l Wein/Sekt) innerhalb von 10 Sekunden aus einem Glas trinken muss. Gelingt dies nicht innerhalb der Zeit, muss sie zusätzlich einen Shot mit mindestens 35% vol. trinken. </item>
+         <item>Reiche dein Handy durch die Runde. Jeder darf nun maximal drei Wörter für eine Nachricht schreiben. Zurück bei dir angelangt, wird die Nachricht an eine (nicht anwesende) Person deiner Wahl gesendet. </item>
+
+         <!--Games from the users-->
+         <item>Beginnend bei dir zieht nun reihum jede Person ein Kleidungsstück aus. Die erste Person, die nichts mehr auszieht, muss drei Shots trinken (Schmuck, z.B. Ring, Uhr, etc., zählt nicht als Kleidungsstück).</item> -->
+
+         <item>Wähle 3 (falls vorhanden, sonst 2 bzw. 1) andere Personen aus. Gemessen an der Körpergöße, trinken nun alle Bier/Sekt oder Wein auf ex wie folgt: 0.1l für die kleinste Person, dann aufsteigend 0.2l, 0.3l, 0.4l.</item>
+         <item>Wähle eine Person aus, die die nächsten fünf Male für dich trinken muss, d.h. an die deine nächsten fünf Aufgaben weitergeleitet werden.</item>
+         <item>Du musst ab sofort für den Rest des Spiels immer trinken, wenn die Person zu deiner Rechten trinken muss.</item>
+         <item>Du musst ab sofort für den Rest des Spiels immer trinken, wenn die Person zu deiner Linken trinken muss.</item>
+         <item>Teile die Anzahl Mitspieler durch zwei und trinke soviele Shots. Ist das Ergebnis ungerade, wird aufgerundet.</item>
+         <item>Nimm die dir gegenüber sitzende Person. Schaut euch in die Augen ohne zu lachen (nur Grimassen erlaubt). Wer zuerst lacht, muss trinken. Lacht niemand nach 15s, müssen beide einen Shot trinken.</item>
+
+         <item>Jede Person darf dir eine Frage stellen, die du ehrlich beantworten musst. Für jede aus Scham nicht beantwortete Frage musst du einen Shot trinken.</item>
+         <item>Stelle eine Schätzfrage, zu der möglichst nur du die genaue Antwort kennst (z.B. das Gewicht deines Hundes). Wer von allen am schlechtesten geschätzt hat, muss einen Shot trinken.</item>
+
+         <item>Wähle ein Wort, welches ab sofort für den Rest des Spiels nicht mehr gesagt werden darf. Wer es dennoch ausspricht, muss jedes Mal einen Shot trinken.</item>
+         <item>Du füllst zwei Gläser mit jeweils 0.3l Bier, oder wahlweise mit 0.2l Sekt/Wein. Nun trinkst du gleichzeitig mit der Person zu deiner Linken. Wer länger braucht, muss zusätzlich einen Shot trinken.</item>
+         <item>Schließe die Augen. Nun muss eine andere Person dir seine/ihre Hand geben und du musst anhand des Fühlens bestimmen, wessen Hand es ist. Liegst du falsch, musst du einen Shot trinken</item>
+         <item>Überlege dir eine bekannte (fiktive) Person. Nun darf der Reihe nach jede Person abwechselnd eine Ja/Nein Frage stellen. Wer zuerst die Person errät muss die nächsten zweimal nichts trinken.</item>
+     </string-array>
+
+    <string-array name="gamesForAll_Classic">
+
+        <item><item>Stellt ein Gefäß in die Mitte des Tisches. Jede Person darf nun einmal versuchen eine Münze in das Gefäß zu schnippen. Bei einem Treffer darf jeweils ein Shottrinker bestimmt werden. </item></item>
+        <item>Die körperlich größte Person muss zusammen mit der kleinsten Person einen Shot trinken. Beide müssen den gleichen Shot trinken, bestimmen darf diesen die Person, welche beim Schere, Stein, Papier eine Runde gewinnt. </item>
+        <item>Die älteste Person muss zusammen mit der jüngsten Person einen Shot trinken. Beide müssen den gleichen Shot trinken, bestimmen darf diesen die Person, welche beim Schere, Stein, Papier eine Runde gewinnt. </item>
+        <item>Nehmt ein beliebiges leeres Glas und platziert es auf einem Tisch. Jede Person versucht nun eine Münze aus ca. 2m Entfernung in das Glas zu werfen. Wer trifft, bleibt verschont. Ansonsten einen Shot trinken. </item>
+        <item>Alle Mitspieler trinken gemeinsam einen beliebigen Shot. </item>
+
+
+
+    </string-array>
+
+    <string-array name="gamesForAll_Daring">
+        <item>Jede Person stellt ein mit Alkohol (z.B. Bier, Longdrink) gefülltes Glas vor sich. Nun darf jeder einmal versuchen, einen Kronkorken in das Glas vom Spieler gegenüber zu werfen. Gelingt dies, muss das Glas vom Besitzer geext werden.</item>
+        <item>Internet erforderlich: Suche online nach Pornotiteln und beginne den ersten Titel vorzulesen. Wer lacht (Vorleser eingeschlossen) muss einen Shot oder einen kräftigen Schluck gutes Bier trinken. Jeder Spieler darf einen Titel vorlesen. </item>
+        <item>Jede Person nennt einen bekannten Film und im Uhrzeigersinn muss nun jede Person einen mitspielenden Schauspieler nennen. Wird keine Antwort gegeben, ist die aktuelle Runde beendet und die Person muss einen Shot trinken.</item>
+        <item>Jede Person, die Ohrringe trägt, muss einen beliebigen Shot trinken.</item>
+        <item>Alle, die schon mit mehr als 10 Personen geschlafen haben, müssen einen Shot trinken.</item>
+
+        <item>Alle, die sich schon mindestens einmal auf Grund von Alkohol übergeben mussten, müssen einen Shot trinken.</item>
+        <item>Wählt per Abstimmung die betrunkenste Person aus. Die Person muss nun versuchen 10s lang mit geschlossenen Augen auf einem Bein zu stehen. Gelingt dies, darf sie einen Shottrinker bestimmen, ansonsten passiert nichts.</item>
+        <item>Nehmt eine Flasche und legt sie in die Mitte des Tisches. Jeder darf nun einmal drehen. Die Person, auf die jeweils gezeigt wird, muss einen Shot oder 0.2l Bier (0.1l Sekt/Wein) auf ex trinken.</item>
+        <item>Nehmt eine Flasche und legt sie in die Mitte des Tisches. Jeder darf nun einmal drehen. Die Person, auf die jeweils gezeigt wird, muss jemanden küssen (Backe/Mund) oder einen Shot trinken.</item>
+        <item>Bildet zwei Teams und eine neutrale Person. Diese flüstert nun jedem nacheinander ein Wort zu, welches dann jeweils pantomimisch erklärt werden muss. Errät das Team es nicht in 1 Minute, trinkt das Team einen Shot.</item>
+
+        <item>Bildet zwei Teams und eine neutrale Person. Diese flüstert nun jedem nacheinander ein Lied zu, welches dann jeweils gesummt werden muss. Errät das Team es nicht in 1 Minute, trinkt das Team einen Shot.</item>
+    </string-array>
+
+
+
+ </resources>

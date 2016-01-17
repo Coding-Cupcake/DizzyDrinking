@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">DizzyDrinking</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="playersNr">Bitte Spieler eingeben</string>
+    <string name="player1">Spieler 1</string>
+    <string name="player2">Spieler 2</string>
+    <string name="playerN">Spieler n</string>
+    <string name="dots">...</string>
+    <string name="enterNames">Namen eingeben/auswählen</string>
+    <string name="contactNames">Aus Kontakten wählen</string>
+    <string name="playersList">Teilnehmende Spieler</string>
+    <string name="startGame">Spiel starten</string>
+    <string name="german">Deutsch</string>
+    <string name="english">Englisch</string>
+    <string name="quit">Beenden</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="dizzy">DizzyDrinking</string>
+    <string name="category">Bitte Kategorie auswählen</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="gameClassic">Eine klassische Aufgabe</string>
+    <string name="gameDaring">Eine gewagte Aufgabe</string>
+    <string name="nextChallenge">Nächste Aufgabe</string>
+    <string name="emptyList">Mindestens zwei Spieler benötigt!</string>
+    <string name="choosePlayers">Spieler aus Liste wählen</string>
+
+
+    <string name="informationHome_Title">Namenseingabe</string>
+    <string name="informationGame_Title">Beliebige Shots</string>
+    <string name="mods_Title">Spielmodi</string>
+    <string name="informationDelete_Title">Spieler löschen</string>
+    <string name="general_Title">Vorbereitung</string>
+    <string name="gameProcess_Title">Spielablauf</string>
+    <string name="newGame_Title">Spiel starten</string>
+    <string name="quitGame_Title">Spiel beenden</string>
+    <string name="info_Title">Allgemeiner Hinweis</string>
+
+
+    <string name="informationHome">Einfach Spielernamen durch manuelle Eingabe hinzufügen, jeweils durch Komma und Leerzeichen getrennt (Alice, Bob, ...) und abschließend den angrenzenden Button anklicken. Alternativ auch via Auswahl aus den Kontakten. Die Kombination beider Auswahlverfahren ist ebenfalls möglich.</string>
+    <string name="informationGame">Wenn von einem beliebigen Shot ohne weitere Angabe die Rede ist, also keine % vol. Angabe dabei steht, spielt der Alkoholgehalt keine Rolle. Es sollte hier aber einfach eine Festlegung vor dem Spiel gemacht werden.</string>
+    <string name="mods">Standardmäßig ist der sogenannte <i>Unique</i> Modus eingestellt. Mit Klick auf <i>Modus wechseln</i> im Menü kann dieser zum <i>Multi</i> Modus geändert werden. Während im <i>Multi</i> Modus die Spiele beliebig oft vorkommen, erscheinen sie im <i>Unique</i> Modus nur einmal, solange bis keine Spiele mehr übrig sind.</string>
+    <string name="general">Das Spiel ist auf Shots ausgelegt. Sollten keine Shots vorhanden oder gewünscht sein, sollte vor Spielbeginn festgelegt werden, welches Getränk stattdessen konsumiert werden soll, wenn bei einer Aufgabe <i>Shot</i> vorkommt. Ansonsten sind keine besonderen Vorbereitungen zu treffen.</string>
+    <string name="informationDelete">Um einen einzelnen Spieler wieder aus der Liste zu entfernen, muss der entsprechende Listeneintrag berührt und eine Weile gehalten werden.</string>
+    <string name="gameProcess">Jede Runde wird per Zufall ein Spieler ausgewählt und rechts unterhalb des Aufgabentextes angezeigt. Auf diesen Spieler bezieht sich die aktuelle Aufgabe, unabhängig davon wer gerade geklickt hat bzw. ob das Smartphone in die Mitte gelegt oder im Kreis umher gereicht wird. Erscheint kein Spielername, so bezieht sich die Aufgabe auf alle Spieler. </string>
+    <string name="newGame">Durch Anklicken des <i>Spiel starten</i> Buttons im Hauptmenü wird ein neues Spiel gestartet. Durch Auswahl des Menüpunktes <i>Spieler zurücksetzen</i> wird die aktuelle Spielerliste gelöscht und erspart manuelles Löschen der einzelnen Spieler.</string>
+    <string name="quitGame">Wann immer aus dem Spiel heraus aus dem Menü der Punkt <i>Hauptmenü</i> gewählt wird, wird das aktuelle Spiel beendet. Die Spielerliste bleibt jedoch gespeichert, kann aber z.B. via <i>Spieler zurücksetzen</i> gelöscht werden.</string>
+    <string name="info">Da dieses Spiel mit Alkoholkonsum einhergeht, bitte verantwortungsvoll damit umgehen. Das Spiel kann selbstverständlich auch mit alkoholfreien Getränken gespielt werden. Viel Spaß!</string>
+
+    <string name="noClassics">Keine klassischen Spiele mehr übrig!</string>
+    <string name="noDaring">Keine gewagten Spiele mehr übrig!</string>
+    <string name="noGames">Keine Spiele mehr übrig. Kehre zurück zum Hauptmenü.</string>
+    <string name="game1">Trinke einen beliebigen Shot.</string>
+    <string name="title_activity_design">DesignActivity</string>
+    <string name="title_activity_info">InfoActivity</string>
+</resources>
