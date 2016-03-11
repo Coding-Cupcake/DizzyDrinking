@@ -92,7 +92,7 @@
         <item>The physically tallest player has to drink a shot together with the smallest player. Both must drink the same shot, which is determined by the player who wins one round of rock-paper-scissors.</item>
         <item>The oldest player has to drink a shot together with the youngest player. Both must drink the same shot, which is determined by the player who wins one round of rock-paper-scissors.</item>
 
-        <item>Place any empty glass anywhere. Each player now tries to throw a coin into the glass from a distance of 2 meters. If you fail, drink an arbitrary shot.</item>
+        <item>Place an empty glass anywhere. Each player now tries to flip a coin into the glass from a distance of approx. 1 meter. If you fail, drink an arbitrary shot.</item>
         <item>All players drink one shot together (must not be the same shot for all).</item>
 
 
@@ -114,6 +114,13 @@
         <item>Build two teams and choose one neutral player. This player whispers a word into every ones ear successively. Now this word has to be explained using pantomime. If the team does not guess the word right within 1 minute, the whole team must drink a shot.</item>
         <item>Build two teams and choose one neutral player. This player whispers a song into every ones ear successively. Now this song has to be hummed. If the team does not guess the song right within 1 minute, the whole team must drink a shot.</item>
 
+    </string-array>
+
+    <string-array name="new_games">
+        <item>Drink an arbitrary shot for each female person appearing in your first 10 contacts. </item>
+        <item>Drink an arbitrary shot for each male person appearing in your first 10 contacts.</item>
+        <item>Drink an arbitrary shot for each female person appearing in your first 5 contacts.</item>
+        <item>Drink an arbitrary shot for each female person appearing in your first 5 contacts.</item>
     </string-array>
 
  </resources>
