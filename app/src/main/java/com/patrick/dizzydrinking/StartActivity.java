@@ -2,9 +2,12 @@ package com.patrick.dizzydrinking;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -26,6 +29,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static com.patrick.dizzydrinking.R.string;
+import android.widget.CheckBox;
+import android.app.AlertDialog;
+import android.content.SharedPreferences;
 
 
 public class StartActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
@@ -33,6 +39,9 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
     public static String[] playerList;
     public static String[] resultList;
     public static boolean normalMod = false;
+
+    public static final String PREFERENCES = "myPreferences";
+    public CheckBox doNotShowAgain;
 
 
     @Override
@@ -155,8 +164,62 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
         final TextView players = (TextView)findViewById(R.id.playersParticipating);
         players.setTypeface(myFont);
 
-    }
 
+        // Pop up a window containing information for the first start
+        AlertDialog.Builder adb = new AlertDialog.Builder(this);
+        LayoutInflater adbInflater = LayoutInflater.from(this);
+        View eulaLayout = adbInflater.inflate(R.layout.checkbox, null);
+        SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
+        String skipMessage = settings.getString("skipMessage", "NOT checked");
+
+        doNotShowAgain = (CheckBox) eulaLayout.findViewById(R.id.skip);
+        adb.setView(eulaLayout);
+        adb.setTitle(getString(string.firstTitle));
+        adb.setMessage(getString(string.firstInformation) + "\n\n" + getString(string.enjoy) + "\n");
+
+        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                String checkBoxResult = "NOT checked";
+
+                if (doNotShowAgain.isChecked()) {
+                    checkBoxResult = "checked";
+                }
+
+                SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
+                SharedPreferences.Editor editor = settings.edit();
+
+                editor.putString("skipMessage", checkBoxResult);
+                editor.commit();
+
+                return;
+            }
+        });
+
+        adb.setNegativeButton(getString(string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                String checkBoxResult = "NOT checked";
+
+                if (doNotShowAgain.isChecked()) {
+                    checkBoxResult = "checked";
+                }
+
+                SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
+                SharedPreferences.Editor editor = settings.edit();
+
+                editor.putString("skipMessage", checkBoxResult);
+                editor.commit();
+
+                return;
+            }
+        });
+
+        if (!skipMessage.equals("checked")) {
+            adb.show();
+        }
+
+        super.onResume();
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -55,4 +55,10 @@
     <string name="quitGame">Whenever you choose <i>Main Menu</i> out of any menu you get back to the main menu and quit your current game. Only your player list will be stored, but if desired you can delete the whole list via <i>Reset players</i> in the menu.</string>
     <string name="info">Since this game features alcohol, please drink responsibly. You can play the game with soft drinks as well. Enjoy the game!</string>
 
+    <string name="firstTitle">Welcome!</string>
+    <string name="firstInformation">Thank you for downloading DizzyDrinking. See the information page located at the menu top right if you have some questions about the game itself. More general information about the app can be found in the menu as well.</string>
+    <string name="enjoy"> Enjoy the game!</string>
+    <string name="showAgain">Do not show this message again.</string>
+    <string name="cancel">Cancel</string>
+
 </resources>

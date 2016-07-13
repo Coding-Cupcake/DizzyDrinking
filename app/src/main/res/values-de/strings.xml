@@ -54,4 +54,11 @@
     <string name="game1">Trinke einen beliebigen Shot.</string>
     <string name="title_activity_design">DesignActivity</string>
     <string name="title_activity_info">InfoActivity</string>
+
+    <string name="firstTitle">Herzlich willkommen!</string>
+    <string name="firstInformation">Vielen Dank für deinen Download von Dizzy Drinking. Solltest du Fragen zum Spiel selbst haben, wirf einfach einen Blick auf die Informationsseite, zu finden im Menü rechts oben. Allgemeine Informationen über die App findest du ebenfalls im Menü. </string>
+    <string name="enjoy"> Viel Spaß beim Spielen!</string>
+    <string name="showAgain">Diese Nachricht nicht wieder anzeigen.</string>
+    <string name="cancel">Abbrechen</string>
+
 </resources>
