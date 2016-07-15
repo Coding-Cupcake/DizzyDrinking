@@ -61,4 +61,9 @@
     <string name="showAgain">Diese Nachricht nicht wieder anzeigen.</string>
     <string name="cancel">Abbrechen</string>
 
+    <string name="aboutTitle">Entstehung</string>
+    <string name="aboutTitleText">Trinkspiele bei Feiern sind so alt wie die Feiern selbst. Die Idee von DizzyDrinking ist es, viele verschiedene Trinkspiele in einer App zu bündeln, um damit den Spaßfaktor zu erhöhen. Keine besonderen Vorkehrungen, jede Menge Abwechslung und nur ein Smartphone zum Spielen benötigt. </string>
+
+    <string name="aboutContact">Kontakt</string>
+    <string name="aboutContactText">Bei Fragen und Anregungen kannst du uns gern kontaktieren. Geht es dabei um das Spiel selbst, dann sende bitte eine Nachricht an dizzydrinking@gmail.com. Bei Punkten bezüglich dem Design steht dir emue08@web.de zur Verfügung. </string>
 </resources>

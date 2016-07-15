@@ -275,10 +275,16 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
                                          break;
 
                     case "Information":
-                    case "Informationen":  Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                    case "Spielinformationen":  Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
                                            intent.putExtra("Caller", "START");
                                            startActivity(intent);
                                            break;
+
+                    case "Über DizzyDrinking":
+                    case "About DizzyDrinking": Intent in_tent = new Intent(getApplicationContext(),AboutActivity.class);
+                                                in_tent.putExtra("Caller", "START");
+                                                startActivity(in_tent);
+                                                break;
 
                     case "Change Mode":     showMods(myView, true);
                                             break;
