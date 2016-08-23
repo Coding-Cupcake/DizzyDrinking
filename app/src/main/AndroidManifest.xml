@@ -38,18 +38,19 @@
         <activity
             android:name=".CategoryActivity"
             android:label="@string/dizzy"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GameActivity"
             android:label="@string/dizzy"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DesignActivity"
-            android:label="@string/dizzy"></activity>
+            android:label="@string/dizzy" />
         <activity
             android:name=".InfoActivity"
-            android:label="@string/dizzy"></activity>
-        <activity android:name=".AboutActivity"></activity>
+            android:label="@string/dizzy" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ClockActivity"></activity>
     </application>
 
 </manifest>

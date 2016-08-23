@@ -101,5 +101,15 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/button_startgame"  />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clock"
+        android:id="@+id/clock"
+        android:layout_alignTop="@+id/listView"
+        android:layout_alignRight="@+id/sendInput"
+        android:layout_alignEnd="@+id/sendInput"
+        android:layout_marginTop="73dp" />
+
 
 </RelativeLayout>

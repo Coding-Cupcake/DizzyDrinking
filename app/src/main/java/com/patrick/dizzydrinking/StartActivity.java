@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
@@ -60,6 +61,20 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
         playerList = getIntent().getStringArrayExtra("resultList");
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+        //###########################################//
+
+        Button my_clock = (Button)findViewById(R.id.clock);
+        my_clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in_tent = new Intent(getApplicationContext(), ClockActivity.class);
+                startActivity(in_tent);
+            }
+        });
+
+
+        //###########################################//
 
         //Set list items
         displayList();
