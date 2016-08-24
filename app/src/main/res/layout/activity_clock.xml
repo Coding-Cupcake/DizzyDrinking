@@ -7,35 +7,48 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.patrick.dizzydrinking.ClockActivity">
+    tools:context="com.patrick.dizzydrinking.ClockActivity"
+    android:background="@drawable/background">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
         android:id="@+id/startButton"
-        android:layout_marginBottom="106dp"
-        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/stop_Button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stop"
         android:id="@+id/stop_Button"
-        android:layout_alignTop="@+id/startButton"
-        android:layout_toRightOf="@+id/chronometer"
-        android:layout_toEndOf="@+id/chronometer" />
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Chronometer
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/chronometer"
-        android:layout_above="@+id/startButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="116dp"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Neustart"
+        android:id="@+id/resetButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/clock_dial"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

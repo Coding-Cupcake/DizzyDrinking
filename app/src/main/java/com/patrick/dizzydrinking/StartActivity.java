@@ -62,20 +62,6 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-        //###########################################//
-
-        Button my_clock = (Button)findViewById(R.id.clock);
-        my_clock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in_tent = new Intent(getApplicationContext(), ClockActivity.class);
-                startActivity(in_tent);
-            }
-        });
-
-
-        //###########################################//
-
         //Set list items
         displayList();
 
