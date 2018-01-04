@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.patrick.dizzydrinking"
-    android:versionCode="2"
-    android:versionName="1.1">
-
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    package="com.patrick.dizzydrinking" >
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/MyHoloLight">
+        android:theme="@style/MyHoloLight" >
         <activity
             android:name=".StartActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize">
+            android:windowSoftInputMode="stateHidden|adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,30 +23,34 @@
         <activity
             android:name=".ContactActivity"
             android:label="@string/dizzy"
-            android:noHistory="true"
             android:parentActivityName=".StartActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light">
+            android:noHistory="true"
+            android:theme="@style/Theme.AppCompat.Light" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.patrick.dizzydrinking.StartActivity" />
         </activity>
         <activity
             android:name=".CategoryActivity"
+            android:noHistory="true"
             android:label="@string/dizzy"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".GameActivity"
+            android:noHistory="true"
             android:label="@string/dizzy"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".DesignActivity"
-            android:label="@string/dizzy" />
+            android:label="@string/dizzy" >
+        </activity>
         <activity
             android:name=".InfoActivity"
-            android:label="@string/dizzy" />
-        <activity android:name=".AboutActivity" />
-        <activity android:name=".ClockActivity"></activity>
+            android:label="@string/dizzy" >
+        </activity>
     </application>
 
 </manifest>

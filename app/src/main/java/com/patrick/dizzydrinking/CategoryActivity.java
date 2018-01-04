@@ -68,7 +68,6 @@ public class CategoryActivity extends ActionBarActivity {
                     intent.putExtra("gamesDaring", gamesDaring);
                     intent.putExtra("Caller", "CAT");
                     startActivity(intent);
-                    finish();
                 }
 
             }
@@ -92,7 +91,6 @@ public class CategoryActivity extends ActionBarActivity {
                     intent.putExtra("gamesDaring", gamesDaring);
                     intent.putExtra("Caller", "CAT");
                     startActivity(intent);
-                    finish();
                 }
 
             }

@@ -45,20 +45,16 @@
     <string name="info_Title">Please Note</string>
 
 
-    <string name="informationHome">Just type in the players manually, each separated by comma and space (Alice, Bob, ...) and click the adjacent arrow button. Alternatively the contact button can be used to choose players out of your phone contacts. You can combine both procedures as well.</string>
+    <string name="informationHome">Just type in the players manually, each separated by comma and space (Frodo, Sam, ...) and click the adjacent arrow button. Alternatively the contact button can be used to choose players out of your phone contacts. You can combine both procedures as well.</string>
     <string name="informationGame">When games require arbitrary shots, that means shots without % alc./vol. declaration, the alcohol concentration does not matter. The players should think of a range before starting the game anyway.</string>
     <string name="mods">By default the <i>Unique</i> mode is set. Clicking on <i>Change Mode</i> makes it possible to change to the <i>Multi</i> mode. In the <i>Unique</i> mode every game appears only once until no more game is remaining, whereas in the <i>Multi</i> mode games can appear repeatedly.</string>
     <string name="general">The game is based on drinking shots. If no shots are available or just not desired you should talk with the other players and determine another (non)alcoholic drink to consume every time the game shows up <i>shot</i>. You do not need any other special preparation to play the games.</string>
     <string name="informationDelete">To remove a player from the list you just have to keep clicking on the corresponding name for a while.</string>
     <string name="gameProcess">Each round one player will be chosen randomly and displayed downright. The current task is always related to this player, no matter who has actually clicked the challenge button. You can either locate your device on the middle of the table or pass it around. The task is assigned to all players if there will be no name downright.</string>
-    <string name="newGame">Clicking on the button <i>Start game</i> in the main menu will start a new game with the players specified beforehand. Choosing <i>Reset players</i> out of the menu will delete all players from the list, such that you do not have to do this manually.</string>
-    <string name="quitGame">Whenever you choose <i>Main Menu</i> out of any menu you get back to the main menu and quit your current game. Only your player list will be stored, but if desired you can delete the whole list via <i>Reset players</i> in the menu.</string>
+    <string name="newGame">Clicking on the button <i>Start game</i> in the main menu will start a new game with the players specified beforehand. Choosing <i>Delete players</i> out of the menu will delete all players from the list, such that you do not have to do this manually.</string>
+    <string name="quitGame">Whenever you choose <i>Main Menu</i> out of any menu you get back to the main menu and quit your current game. Only your player list will be stored, but if desired you can delete the whole list via <i>Delete players</i> in the menu.</string>
     <string name="info">Since this game features alcohol, please drink responsibly. You can play the game with soft drinks as well. Enjoy the game!</string>
 
-    <string name="firstTitle">Welcome!</string>
-    <string name="firstInformation">Thank you for downloading DizzyDrinking. See the information page located at the menu top right if you have some questions about the game itself. More general information about the app can be found in the menu as well.</string>
-    <string name="enjoy"> Enjoy the game!</string>
-    <string name="showAgain">Do not show this message again.</string>
-    <string name="cancel">Cancel</string>
+    <string name="contactPickerNoSupport">Contact picking is currently not supported. Please enter the names into the text box.</string>
 
 </resources>

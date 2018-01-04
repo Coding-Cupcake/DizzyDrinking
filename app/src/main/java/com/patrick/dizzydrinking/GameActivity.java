@@ -10,11 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.PopupMenu;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,13 +37,6 @@ public class GameActivity extends ActionBarActivity {
     private ArrayList<String> gamesClassic;
     private ArrayList<String> gamesDaring;
 
-    private ArrayList<String> gamesClassic_Time;
-    private ArrayList<String> gamesDaring_Time;
-    private static ArrayList<String> gamesDaringAll_Time;
-
-    ImageButton startWatch;
-
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,9 +60,6 @@ public class GameActivity extends ActionBarActivity {
         final TextView players = (TextView) findViewById(R.id.players);
         final Button challenge = (Button)findViewById(R.id.currentChallenge);
         challenge.setTypeface(myFont);
-
-        startWatch = (ImageButton)findViewById(R.id.startWatch);
-        startWatch.setVisibility(View.INVISIBLE);
 
         if(category == 0)
         challenge.setText(R.string.gameClassic);
@@ -119,7 +106,7 @@ public class GameActivity extends ActionBarActivity {
                 intent.putExtra("gamesDaring", gamesDaring);
                 intent.putExtra("category", category);
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -186,7 +173,6 @@ public class GameActivity extends ActionBarActivity {
                         intentInfo.putExtra("lastGame", currentGame);
                         intentInfo.putExtra("lastPlayer", currentPlayer);
                         startActivity(intentInfo);
-                        finish();
                         break;
 
                 }
@@ -199,6 +185,7 @@ public class GameActivity extends ActionBarActivity {
     public int showGame(int category) {
 
         TextView challenge = (TextView) findViewById(R.id.description);
+
 
         if(mod){
 
@@ -221,7 +208,7 @@ public class GameActivity extends ActionBarActivity {
                 if(classicGamesAll.contains(randomGame))
                     result = 1;
                 else result = 0;
-                check_time(challenge.getText().toString());
+
                 return result;
 
             }
@@ -246,7 +233,7 @@ public class GameActivity extends ActionBarActivity {
                 if(daringGamesAll.contains(randomGame))
                     result = 1;
                 else result = 0;
-                check_time(challenge.getText().toString());
+
                 return result;
 
             }
@@ -281,7 +268,7 @@ public class GameActivity extends ActionBarActivity {
                     if(gamesClassicAll.contains(randomGame))
                         result = 1;
                     else result = 0;
-                    check_time(challenge.getText().toString());
+
                     return result;
 
                 }
@@ -314,44 +301,15 @@ public class GameActivity extends ActionBarActivity {
                     if(gamesDaringAll.contains(randomGame))
                         result = 1;
                     else result = 0;
-                    check_time(challenge.getText().toString());
+
                     return result;
                 }
 
             }
 
         }
-
             return 0;
     }
-
-    public void check_time (String text) {
-
-        if (text.startsWith("Zeitspiel")) {
-
-            startWatch.setVisibility(View.VISIBLE);
-
-            startWatch.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Intent in_tent = new Intent(getApplicationContext(), ClockActivity.class);
-                in_tent.putExtra("Caller", "GAME");
-                in_tent.putExtra("players", allPlayers);
-                in_tent.putExtra("mode", mod);
-                in_tent.putExtra("gamesClassic", gamesClassic);
-                in_tent.putExtra("gamesDaring", gamesDaring);
-                in_tent.putExtra("category", category);
-                in_tent.putExtra("lastGame", currentGame);
-                in_tent.putExtra("lastPlayer", currentPlayer);
-                startActivity(in_tent);
-                finish();
-
-            }
-        });
-
-    } }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {

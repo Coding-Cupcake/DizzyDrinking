@@ -13,19 +13,14 @@
 
     <item
         android:id="@+id/info"
-        android:title="Spielinformationen"
-        android:icon="@drawable/ic_clear_normal"/>
-
-
-    <item
-        android:id="@+id/aboutDizzy"
-        android:title="Über DizzyDrinking"
+        android:title="Informationen"
         android:icon="@drawable/ic_clear_normal"/>
 
     <item
         android:id="@+id/quitApp"
         android:title="Beenden"
         android:icon="@drawable/ic_clear_normal"/>
+
 
 
 </menu>
