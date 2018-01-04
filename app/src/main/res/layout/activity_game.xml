@@ -27,8 +27,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/game1"
         android:id="@+id/description"
-        android:layout_marginTop="82dp"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/currentChallenge"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="20dp"/>

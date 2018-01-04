@@ -1,7 +1,6 @@
 package com.patrick.dizzydrinking;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.view.View;
@@ -64,9 +62,10 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
-                intent.putExtra("ownList", resultList);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),getString(string.contactPickerNoSupport) , Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+                //intent.putExtra("ownList", resultList);
+                //startActivity(intent);
 
             }
         });
@@ -122,9 +121,8 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
                         allContacts.setAdapter(adapter);
                     }
 
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-                edit.getText().clear();
+
+
 
             }
         });
@@ -347,12 +345,12 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
 
             });
 
-        //ListView Item Click Listener
-        allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //ListView Item Click Listener
+            allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
                 }
              });
         }

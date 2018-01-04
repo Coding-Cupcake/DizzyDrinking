@@ -10,10 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupMenu;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -108,7 +106,7 @@ public class GameActivity extends ActionBarActivity {
                 intent.putExtra("gamesDaring", gamesDaring);
                 intent.putExtra("category", category);
                 startActivity(intent);
-                finish();
+
             }
         });
 
@@ -175,7 +173,6 @@ public class GameActivity extends ActionBarActivity {
                         intentInfo.putExtra("lastGame", currentGame);
                         intentInfo.putExtra("lastPlayer", currentPlayer);
                         startActivity(intentInfo);
-                        finish();
                         break;
 
                 }

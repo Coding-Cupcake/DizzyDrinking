@@ -1,39 +1,23 @@
 package com.patrick.dizzydrinking;
 
 import android.app.ListActivity;
-import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Typeface;
-import android.provider.ContactsContract;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import java.util.ArrayList;
-import java.util.Arrays;
-import android.view.View;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckedTextView;
-import android.widget.ImageButton;
-import android.widget.ListView;
 
 
-public class ContactActivity extends ListActivity {
+public class ContactActivity extends ListActivity {}
 
-    public static ArrayList<String> contactList;
+    /*public static ArrayList<String> contactList;
     public static ArrayList<String> partialContactList;
 
     public static String[] allContacts;
-    public static String[] chosenContacts;
+    public static String[] chosenContacts;*/
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+    //@Override
+    //protected void onCreate(Bundle savedInstanceState) {
+       // super.onCreate(savedInstanceState);
+       // setContentView(R.layout.activity_contact);
 
         //Set the font
-        Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
+        /*Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
         partialContactList = new ArrayList<>();
 
@@ -155,7 +139,6 @@ public class ContactActivity extends ListActivity {
     {
         Intent intent = new Intent(getApplicationContext(), StartActivity.class);
         startActivity(intent);
-    }
+    }*/
 
-}
 

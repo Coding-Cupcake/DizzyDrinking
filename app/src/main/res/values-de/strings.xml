@@ -38,14 +38,14 @@
     <string name="info_Title">Allgemeiner Hinweis</string>
 
 
-    <string name="informationHome">Einfach Spielernamen durch manuelle Eingabe hinzufügen, jeweils durch Komma und Leerzeichen getrennt (Alice, Bob, ...) und abschließend den angrenzenden Button anklicken. Alternativ auch via Auswahl aus den Kontakten. Die Kombination beider Auswahlverfahren ist ebenfalls möglich.</string>
+    <string name="informationHome">Einfach Spielernamen durch manuelle Eingabe hinzufügen, jeweils durch Komma und Leerzeichen getrennt (Frodo, Sam, ...) und abschließend den angrenzenden Button anklicken. Alternativ auch via Auswahl aus den Kontakten. Die Kombination beider Auswahlverfahren ist ebenfalls möglich.</string>
     <string name="informationGame">Wenn von einem beliebigen Shot ohne weitere Angabe die Rede ist, also keine % vol. Angabe dabei steht, spielt der Alkoholgehalt keine Rolle. Es sollte hier aber einfach eine Festlegung vor dem Spiel gemacht werden.</string>
     <string name="mods">Standardmäßig ist der sogenannte <i>Unique</i> Modus eingestellt. Mit Klick auf <i>Modus wechseln</i> im Menü kann dieser zum <i>Multi</i> Modus geändert werden. Während im <i>Multi</i> Modus die Spiele beliebig oft vorkommen, erscheinen sie im <i>Unique</i> Modus nur einmal, solange bis keine Spiele mehr übrig sind.</string>
     <string name="general">Das Spiel ist auf Shots ausgelegt. Sollten keine Shots vorhanden oder gewünscht sein, sollte vor Spielbeginn festgelegt werden, welches Getränk stattdessen konsumiert werden soll, wenn bei einer Aufgabe <i>Shot</i> vorkommt. Ansonsten sind keine besonderen Vorbereitungen zu treffen.</string>
     <string name="informationDelete">Um einen einzelnen Spieler wieder aus der Liste zu entfernen, muss der entsprechende Listeneintrag berührt und eine Weile gehalten werden.</string>
     <string name="gameProcess">Jede Runde wird per Zufall ein Spieler ausgewählt und rechts unterhalb des Aufgabentextes angezeigt. Auf diesen Spieler bezieht sich die aktuelle Aufgabe, unabhängig davon wer gerade geklickt hat bzw. ob das Smartphone in die Mitte gelegt oder im Kreis umher gereicht wird. Erscheint kein Spielername, so bezieht sich die Aufgabe auf alle Spieler. </string>
-    <string name="newGame">Durch Anklicken des <i>Spiel starten</i> Buttons im Hauptmenü wird ein neues Spiel gestartet. Durch Auswahl des Menüpunktes <i>Spieler zurücksetzen</i> wird die aktuelle Spielerliste gelöscht und erspart manuelles Löschen der einzelnen Spieler.</string>
-    <string name="quitGame">Wann immer aus dem Spiel heraus aus dem Menü der Punkt <i>Hauptmenü</i> gewählt wird, wird das aktuelle Spiel beendet. Die Spielerliste bleibt jedoch gespeichert, kann aber z.B. via <i>Spieler zurücksetzen</i> gelöscht werden.</string>
+    <string name="newGame">Durch Anklicken des <i>Spiel starten</i> Buttons im Hauptmenü wird ein neues Spiel gestartet. Durch Auswahl des Menüpunktes <i>Spielerliste löschen</i> wird die aktuelle Spielerliste gelöscht und erspart manuelles Löschen der einzelnen Spieler.</string>
+    <string name="quitGame">Wann immer aus dem Spiel heraus aus dem Menü der Punkt <i>Hauptmenü</i> gewählt wird, wird das aktuelle Spiel beendet. Die Spielerliste bleibt jedoch gespeichert, kann aber z.B. via <i>Spielerliste löschen</i> gelöscht werden.</string>
     <string name="info">Da dieses Spiel mit Alkoholkonsum einhergeht, bitte verantwortungsvoll damit umgehen. Das Spiel kann selbstverständlich auch mit alkoholfreien Getränken gespielt werden. Viel Spaß!</string>
 
     <string name="noClassics">Keine klassischen Spiele mehr übrig!</string>
@@ -54,4 +54,6 @@
     <string name="game1">Trinke einen beliebigen Shot.</string>
     <string name="title_activity_design">DesignActivity</string>
     <string name="title_activity_info">InfoActivity</string>
+
+    <string name="contactPickerNoSupport">Kontaktauswahl wird derzeit nicht unterstützt. Bitte nutze die Textbox zur Namenseingabe.</string>
 </resources>
