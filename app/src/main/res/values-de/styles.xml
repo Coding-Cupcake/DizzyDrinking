@@ -1,11 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="MyHoloLight" parent="Theme.AppCompat.Light">
+    <style name="MyHoloLight" parent="Base.Theme.AppCompat.Light">
         <item name="android:popupMenuStyle">@style/popupMenuStyle</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.Example.Widget</item>
     </style>

@@ -13,12 +13,7 @@
 
     <item
         android:id="@+id/info"
-        android:title="Game Information"
-        android:icon="@drawable/ic_clear_normal"/>
-
-    <item
-        android:id="@+id/aboutDizzy"
-        android:title="About DizzyDrinking"
+        android:title="Information"
         android:icon="@drawable/ic_clear_normal"/>
 
     <item

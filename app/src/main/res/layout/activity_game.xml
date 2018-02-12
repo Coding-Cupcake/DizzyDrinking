@@ -27,8 +27,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/game1"
         android:id="@+id/description"
-        android:layout_marginTop="82dp"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/currentChallenge"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="20dp"/>
@@ -71,15 +71,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/background_textbox" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/startWatch"
-        android:src="@drawable/ic_menu_recent_history"
-        android:background="#00ffffff"
-        android:clickable="true"
-        android:layout_above="@+id/players"
-        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

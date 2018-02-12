@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="60cc1812cce10f5bfc3373f88aa32bfef4e2c762">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_3105561c2a707baafeac16e0f90365e7aaf7ec0b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-22.0.0_9f3fa36fe1c9f915b085d51709d5ec8217781072\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.0.0_d3377f23c2d64262447d39f9e74f4e66a22a2755\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="f3dfb2e2d0b58841c17efe89d250ea34e5d4bc08">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2cf464c6d6337befcfa030468a7de78c35540002\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.0.0_a6f30933950d90d8988c8e7ca5f7193d49584fa4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Patrick\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Patrick\BitBucket\dizzydrinking\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-22.0.0_e5328a9c7f14c2c659a942e13636b2143908b07f\classes.dex" />
+    </item>
+
+</items>

@@ -1,23 +1,17 @@
 package com.patrick.dizzydrinking;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.text.Html;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
@@ -30,9 +24,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static com.patrick.dizzydrinking.R.string;
-import android.widget.CheckBox;
-import android.app.AlertDialog;
-import android.content.SharedPreferences;
 
 
 public class StartActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
@@ -40,9 +31,6 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
     public static String[] playerList;
     public static String[] resultList;
     public static boolean normalMod = false;
-
-    public static final String PREFERENCES = "myPreferences";
-    public CheckBox doNotShowAgain;
 
 
     @Override
@@ -74,9 +62,10 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
-                intent.putExtra("ownList", resultList);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),getString(string.contactPickerNoSupport) , Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+                //intent.putExtra("ownList", resultList);
+                //startActivity(intent);
 
             }
         });
@@ -132,9 +121,8 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
                         allContacts.setAdapter(adapter);
                     }
 
-                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-                edit.getText().clear();
+
+
 
             }
         });
@@ -165,62 +153,8 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
         final TextView players = (TextView)findViewById(R.id.playersParticipating);
         players.setTypeface(myFont);
 
-
-        // Pop up a window containing information for the first start
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        LayoutInflater adbInflater = LayoutInflater.from(this);
-        View eulaLayout = adbInflater.inflate(R.layout.checkbox, null);
-        SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
-        String skipMessage = settings.getString("skipMessage", "NOT checked");
-
-        doNotShowAgain = (CheckBox) eulaLayout.findViewById(R.id.skip);
-        adb.setView(eulaLayout);
-        adb.setTitle(getString(string.firstTitle));
-        adb.setMessage(getString(string.firstInformation) + "\n\n" + getString(string.enjoy) + "\n");
-
-        adb.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                String checkBoxResult = "NOT checked";
-
-                if (doNotShowAgain.isChecked()) {
-                    checkBoxResult = "checked";
-                }
-
-                SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
-                SharedPreferences.Editor editor = settings.edit();
-
-                editor.putString("skipMessage", checkBoxResult);
-                editor.commit();
-
-                return;
-            }
-        });
-
-        adb.setNegativeButton(getString(string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                String checkBoxResult = "NOT checked";
-
-                if (doNotShowAgain.isChecked()) {
-                    checkBoxResult = "checked";
-                }
-
-                SharedPreferences settings = getSharedPreferences(PREFERENCES, 0);
-                SharedPreferences.Editor editor = settings.edit();
-
-                editor.putString("skipMessage", checkBoxResult);
-                editor.commit();
-
-                return;
-            }
-        });
-
-        if (!skipMessage.equals("checked")) {
-            adb.show();
-        }
-
-        super.onResume();
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -276,16 +210,10 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
                                          break;
 
                     case "Information":
-                    case "Spielinformationen":  Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                    case "Informationen":  Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
                                            intent.putExtra("Caller", "START");
                                            startActivity(intent);
                                            break;
-
-                    case "Über DizzyDrinking":
-                    case "About DizzyDrinking": Intent in_tent = new Intent(getApplicationContext(),AboutActivity.class);
-                                                in_tent.putExtra("Caller", "START");
-                                                startActivity(in_tent);
-                                                break;
 
                     case "Change Mode":     showMods(myView, true);
                                             break;
@@ -417,12 +345,12 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
 
             });
 
-        //ListView Item Click Listener
-        allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //ListView Item Click Listener
+            allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
                 }
              });
         }
