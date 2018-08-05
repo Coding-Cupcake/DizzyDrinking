@@ -1,13 +1,15 @@
 package com.patrick.dizzydrinking;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Typeface;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.view.View;
@@ -26,7 +28,7 @@ import java.util.Arrays;
 import static com.patrick.dizzydrinking.R.string;
 
 
-public class StartActivity extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
+public class StartActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     public static String[] playerList;
     public static String[] resultList;
@@ -121,7 +123,9 @@ public class StartActivity extends ActionBarActivity implements AdapterView.OnIt
                         allContacts.setAdapter(adapter);
                     }
 
-
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
 
             }

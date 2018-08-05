@@ -1,7 +1,7 @@
 package com.patrick.dizzydrinking;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,7 +11,7 @@ import android.widget.PopupMenu;
 import android.widget.Toast;
 
 
-public class InfoActivity extends ActionBarActivity {
+public class InfoActivity extends AppCompatActivity {
 
     private String caller;
 

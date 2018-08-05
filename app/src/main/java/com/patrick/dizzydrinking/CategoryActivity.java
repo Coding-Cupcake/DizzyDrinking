@@ -2,7 +2,7 @@ package com.patrick.dizzydrinking;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class CategoryActivity extends ActionBarActivity {
+public class CategoryActivity extends AppCompatActivity {
 
     private String[] players;
     public  boolean mod;

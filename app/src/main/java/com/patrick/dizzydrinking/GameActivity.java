@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 
-public class GameActivity extends ActionBarActivity {
+public class GameActivity extends AppCompatActivity {
 
     private String[] allPlayers;
     private boolean mod;
@@ -112,18 +112,18 @@ public class GameActivity extends ActionBarActivity {
             }
         });
 
-        //Clock Image Button
-        ImageButton clock = (ImageButton) findViewById(R.id.imageButton3);
-        clock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v){
-                Chronometer chronometer = (Chronometer) findViewById(R.id.chronometer3);
-
-                if(!chronometer.isActivated()) {
-                    chronometer.start();
-                } else chronometer.stop();
-            }
-        });
+//        //Clock Image Button
+//        ImageButton clock = (ImageButton) findViewById(R.id.imageButton3);
+//        clock.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v){
+//                Chronometer chronometer = (Chronometer) findViewById(R.id.chronometer3);
+//
+//                if(!chronometer.isActivated()) {
+//                    chronometer.start();
+//                } else chronometer.stop();
+//            }
+//        });
 
     }
 
