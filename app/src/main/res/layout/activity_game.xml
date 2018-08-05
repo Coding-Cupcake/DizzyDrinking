@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,17 +10,15 @@
     android:background="@drawable/background">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:src="@drawable/note"
-        android:rotation="-5.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/nextChallenge"
-        android:layout_alignRight="@+id/nextChallenge"
-        android:layout_alignEnd="@+id/nextChallenge"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/currentChallenge" />
+        android:layout_marginBottom="17dp"
+        android:rotation="-5.5"
+        android:src="@drawable/note" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,17 +33,15 @@
         android:layout_marginRight="20dp"/>
 
     <TextView
+        android:id="@+id/players"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_above="@+id/imageButton3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
         android:text="Spieler 1, Spieler 2"
-        android:id="@+id/players"
-        android:textStyle="italic"
-        android:layout_marginBottom="52dp"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignRight="@+id/description"
-        android:layout_alignEnd="@+id/description"
-        android:layout_marginRight="10dp"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,5 +68,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="@drawable/background_textbox" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:src="@drawable/ic_alarm_black_24dp" />
+
+    <Chronometer
+        android:id="@+id/chronometer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/players"
+        android:layout_alignStart="@+id/players"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        android:format="MM:SS"
+        android:textSize="30sp" />
 
 </RelativeLayout>

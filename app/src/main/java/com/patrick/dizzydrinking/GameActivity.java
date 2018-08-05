@@ -11,6 +11,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -107,6 +109,19 @@ public class GameActivity extends ActionBarActivity {
                 intent.putExtra("category", category);
                 startActivity(intent);
 
+            }
+        });
+
+        //Clock Image Button
+        ImageButton clock = (ImageButton) findViewById(R.id.imageButton3);
+        clock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Chronometer chronometer = (Chronometer) findViewById(R.id.chronometer3);
+
+                if(!chronometer.isActivated()) {
+                    chronometer.start();
+                } else chronometer.stop();
             }
         });
 
