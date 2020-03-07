@@ -1,41 +1,60 @@
 package com.patrick.dizzydrinking;
 
 import android.app.ListActivity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckedTextView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
-public class ContactActivity extends ListActivity {}
+public class ContactActivity extends ListActivity {
 
-    /*public static ArrayList<String> contactList;
+    public static ArrayList<String> contactList;
     public static ArrayList<String> partialContactList;
 
     public static String[] allContacts;
-    public static String[] chosenContacts;*/
+    public static String[] chosenContacts;
 
-    //@Override
-    //protected void onCreate(Bundle savedInstanceState) {
-       // super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_contact);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_contact);
 
         //Set the font
-        /*Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
+        Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
         partialContactList = new ArrayList<>();
 
         contactList = new ArrayList<>();
         Cursor phones;
 
-        phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
-        while (phones.moveToNext())
-        {
-            String name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-            if(!contactList.contains(name))
-            contactList.add(name);
+        phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        while (phones.moveToNext()) {
+            String name = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            if (!contactList.contains(name))
+                contactList.add(name);
 
         }
         phones.close();
 
         String[] list = new String[contactList.size()];
-        for(int i = 0; i < contactList.size(); i++) {
+        for (int i = 0; i < contactList.size(); i++) {
 
             list[i] = contactList.get(i);
 
@@ -49,25 +68,25 @@ public class ContactActivity extends ListActivity {}
         Arrays.sort(allContacts);
 
         //Choose Names
-        Button chooseNames = (Button)findViewById(R.id.chooseNames);
+        Button chooseNames = (Button) findViewById(R.id.chooseNames);
         chooseNames.setTypeface(myFont);
 
-        setListAdapter(new ArrayAdapter<>(this,android.R.layout.simple_list_item_checked,allContacts));
+        setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, allContacts));
 
 
         //Send Button
-        ImageButton sendContacts = (ImageButton)findViewById(R.id.sendContacts);
+        ImageButton sendContacts = (ImageButton) findViewById(R.id.sendContacts);
         sendContacts.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                if(getIntent().getStringArrayExtra(("ownList")) != null)
-                partialContactList.addAll(Arrays.asList(getIntent().getStringArrayExtra("ownList")));
+                if (getIntent().getStringArrayExtra(("ownList")) != null)
+                    partialContactList.addAll(Arrays.asList(getIntent().getStringArrayExtra("ownList")));
 
                 chosenContacts = new String[partialContactList.size()];
 
-                for(int i = 0; i < partialContactList.size(); i++)
+                for (int i = 0; i < partialContactList.size(); i++)
                     chosenContacts[i] = partialContactList.get(i);
 
                 Arrays.sort(chosenContacts);
@@ -76,16 +95,16 @@ public class ContactActivity extends ListActivity {}
                 intent.putExtra("resultList", chosenContacts);
                 startActivity(intent);
 
-             }
+            }
         });
 
 
         //Cancel Button
-        ImageButton cancelContacts = (ImageButton)findViewById(R.id.cancelList);
+        ImageButton cancelContacts = (ImageButton) findViewById(R.id.cancelList);
         cancelContacts.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), StartActivity.class);
                 startActivity(intent);
@@ -94,6 +113,7 @@ public class ContactActivity extends ListActivity {}
 
 
         });
+
 
     }
 
@@ -120,14 +140,13 @@ public class ContactActivity extends ListActivity {}
         return super.onOptionsItemSelected(item);
     }
 
-    public void onListItemClick(ListView parent, View v,int position,long id){
+    public void onListItemClick(ListView parent, View v, int position, long id) {
 
         CheckedTextView item = (CheckedTextView) v;
 
-        if(!(partialContactList.contains(item.getText().toString()))) {
+        if (!(partialContactList.contains(item.getText().toString()))) {
             partialContactList.add(item.getText().toString());
-        }
-        else {
+        } else {
             partialContactList.remove(item.getText().toString());
         }
 
@@ -135,10 +154,9 @@ public class ContactActivity extends ListActivity {}
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         Intent intent = new Intent(getApplicationContext(), StartActivity.class);
         startActivity(intent);
-    }*/
-
+    }
+}
 

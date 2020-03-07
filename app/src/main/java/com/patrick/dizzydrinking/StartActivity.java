@@ -1,19 +1,22 @@
 package com.patrick.dizzydrinking;
 
-import android.app.Activity;
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.view.View;
-import android.content.Intent;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
@@ -30,15 +33,21 @@ import static com.patrick.dizzydrinking.R.string;
 
 public class StartActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    private static final int PERMISSION_REQUEST_READ_CONTACTS = 0;
+    private static boolean PERMISSION_GRANTED = false;
+
     public static String[] playerList;
     public static String[] resultList;
     public static boolean normalMod = false;
+
+    private View mLayout;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        mLayout = findViewById(R.id.contactPicker);
 
         //Set the icon
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -58,72 +67,68 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
         normalMod = getIntent().getBooleanExtra("mode", false);
 
         //Contact button
-        ImageButton getContacts = (ImageButton)findViewById(R.id.contactPicker);
+        ImageButton getContacts = (ImageButton) findViewById(R.id.contactPicker);
         getContacts.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(getApplicationContext(),getString(string.contactPickerNoSupport) , Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
-                //intent.putExtra("ownList", resultList);
+                //Intent intent = new Intent(getApplicationContext(),
+                        //PrivacyPolicyActivity.class);
                 //startActivity(intent);
-
+                showContactActivity();
             }
         });
 
         //Send button
-        ImageButton sendNames = (ImageButton)findViewById(R.id.sendInput);
-        sendNames.setOnClickListener(new View.OnClickListener(){
+        ImageButton sendNames = (ImageButton) findViewById(R.id.sendInput);
+        sendNames.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
-                    EditText edit = (EditText)findViewById(R.id.editText);
-                    String input = edit.getText().toString();
-                    String[] values = input.split(", ");
+                EditText edit = (EditText) findViewById(R.id.editText);
+                String input = edit.getText().toString();
+                String[] values = input.split(", ");
 
-                    ArrayList<String> temp = new ArrayList<>();
-                    temp.addAll(Arrays.asList(values));
+                ArrayList<String> temp = new ArrayList<>();
+                temp.addAll(Arrays.asList(values));
 
-                    for(String player : temp) {
-                        if(player.isEmpty())
-                            temp.remove(player);
+                for (String player : temp) {
+                    if (player.isEmpty())
+                        temp.remove(player);
+                }
+
+
+                if (resultList != null) for (String s : resultList) {
+                    if (!temp.contains(s)) {
+                        temp.add(s);
+                    }
+                }
+
+
+                if (resultList != null && resultList.length == 0 && temp.isEmpty()) {
+
+                    setDefault();
+                    Toast.makeText(getApplicationContext(), getString(string.playersNr), Toast.LENGTH_SHORT).show();
+
+                } else {
+                    resultList = new String[temp.size()];
+
+                    for (int i = 0; i < temp.size(); i++) {
+
+                        resultList[i] = temp.get(i);
+
                     }
 
+                    Arrays.sort(resultList);
 
-                    if(resultList != null) for (String s : resultList) {
-                        if(!temp.contains(s)) {
-                            temp.add(s);
-                        }
-                    }
+                    final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+                    final ListView allContacts = (ListView) findViewById(R.id.listView);
 
+                    allContacts.setAdapter(adapter);
+                }
 
-                    if(resultList != null && resultList.length == 0 && temp.isEmpty()) {
-
-                        setDefault();
-                        Toast.makeText(getApplicationContext(), getString(string.playersNr), Toast.LENGTH_SHORT).show();
-
-                    }
-
-                    else{
-                        resultList = new String[temp.size()];
-
-                        for (int i = 0; i < temp.size(); i++) {
-
-                            resultList[i] = temp.get(i);
-
-                        }
-
-                        Arrays.sort(resultList);
-
-                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
-                        final ListView allContacts = (ListView)findViewById(R.id.listView);
-
-                        allContacts.setAdapter(adapter);
-                    }
-
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                         InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
@@ -132,13 +137,13 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
         });
 
         //Start game
-        final TextView startGame = (TextView)findViewById(R.id.nextChallenge);
+        final TextView startGame = (TextView) findViewById(R.id.nextChallenge);
         startGame.setTypeface(myFont);
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(resultList == null || resultList.length < 2) {
+                if (resultList == null || resultList.length < 2) {
                     Toast.makeText(getApplicationContext(), getString(string.emptyList), Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), CategoryActivity.class);
@@ -150,11 +155,11 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
         });
 
         //Choose names
-        final TextView chooseNames = (TextView)findViewById(R.id.enterNames);
+        final TextView chooseNames = (TextView) findViewById(R.id.enterNames);
         chooseNames.setTypeface(myFont);
 
         //players
-        final TextView players = (TextView)findViewById(R.id.playersParticipating);
+        final TextView players = (TextView) findViewById(R.id.playersParticipating);
         players.setTypeface(myFont);
 
     }
@@ -184,7 +189,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
             return true;
         }
-      return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position,
@@ -208,33 +213,45 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                 switch (item.toString()) {
 
                     case "Reset Players":
-                    case "Spieler zurücksetzen" : setDefault();
-                                         resultList = null;
-                                         playerList = null;
-                                         break;
+                    case "Spieler zurücksetzen":
+                        setDefault();
+                        resultList = null;
+                        playerList = null;
+                        break;
 
                     case "Information":
-                    case "Informationen":  Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
-                                           intent.putExtra("Caller", "START");
-                                           startActivity(intent);
-                                           break;
+                    case "Informationen":
+                        Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+                        intent.putExtra("Caller", "START");
+                        startActivity(intent);
+                        break;
 
-                    case "Change Mode":     showMods(myView, true);
-                                            break;
+                    case "Change Mode":
+                        showMods(myView, true);
+                        break;
 
-                    case "Modus wechseln":  showMods(myView, false);
-                                            break;
+                    case "Modus wechseln":
+                        showMods(myView, false);
+                        break;
+
+                    case "Datenschutz":
+                    case "Privacy Policy":
+                        Intent privacyIntent = new Intent(getApplicationContext(), PrivacyPolicyActivity.class);
+                        privacyIntent.putExtra("Caller", "START");
+                        startActivity(privacyIntent);
+                        break;
 
                     case "Quit":
-                    case "Beenden":         finish();
+                    case "Beenden":
+                        finish();
                 }
 
-            return false;
-        }
-    });
+                return false;
+            }
+        });
     }
 
-    public void showMods(View v, final boolean english){
+    public void showMods(View v, final boolean english) {
 
         PopupMenu popup = new PopupMenu(this, v);
 
@@ -248,16 +265,20 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
                 switch (item.toString()) {
 
-                    case "Multi": normalMod = true;
-                                        if(english)
-                                            Toast.makeText(getApplicationContext(), "Chosen Mode: Multi", Toast.LENGTH_SHORT).show();
-                                        else  Toast.makeText(getApplicationContext(), "Gewählter Modus: Multi", Toast.LENGTH_SHORT).show();
-                                        break;
+                    case "Multi":
+                        normalMod = true;
+                        if (english)
+                            Toast.makeText(getApplicationContext(), "Chosen Mode: Multi", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(getApplicationContext(), "Gewählter Modus: Multi", Toast.LENGTH_SHORT).show();
+                        break;
 
-                    case "Unique":  normalMod = false;
-                                        if(english)
-                                            Toast.makeText(getApplicationContext(), "Chosen Mode: Unique", Toast.LENGTH_SHORT).show();
-                                        else Toast.makeText(getApplicationContext(), "Gewählter Modus: Unique", Toast.LENGTH_SHORT).show();
+                    case "Unique":
+                        normalMod = false;
+                        if (english)
+                            Toast.makeText(getApplicationContext(), "Chosen Mode: Unique", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(getApplicationContext(), "Gewählter Modus: Unique", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -275,18 +296,18 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
     public void displayList() {
 
         //List View
-        final ListView allContacts = (ListView)findViewById(R.id.listView);
+        final ListView allContacts = (ListView) findViewById(R.id.listView);
 
 
         ArrayList<String> temp = new ArrayList<>();
 
-        if(resultList != null) for (String s : resultList) {
-            if(!temp.contains(s)) {
+        if (resultList != null) for (String s : resultList) {
+            if (!temp.contains(s)) {
                 temp.add(s);
             }
         }
 
-        if(playerList != null) for (String s : playerList) {
+        if (playerList != null) for (String s : playerList) {
             if (!temp.contains(s)) {
                 temp.add(s);
             }
@@ -304,82 +325,126 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
         final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
 
-        if(resultList.length > 0) {
+        if (resultList.length > 0) {
 
             allContacts.setAdapter(adapter);
 
-        }
-
-        else setDefault();
+        } else setDefault();
 
         //Remove players
         allContacts.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
-                @Override
-                public boolean onItemLongClick(AdapterView<?> parent, View view,
-                                               int position, long arg3) {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view,
+                                           int position, long arg3) {
 
-                    ArrayList<String> tempList = new ArrayList<>();
+                ArrayList<String> tempList = new ArrayList<>();
 
-                    tempList.addAll(Arrays.asList(resultList));
+                tempList.addAll(Arrays.asList(resultList));
 
-                    if(resultList.length > 0) {
+                if (resultList.length > 0) {
 
-                        tempList.remove(position);
-                        resultList = new String[tempList.size()];
-                        for(int i = 0; i < tempList.size(); i++) {
+                    tempList.remove(position);
+                    resultList = new String[tempList.size()];
+                    for (int i = 0; i < tempList.size(); i++) {
 
-                            resultList[i] = tempList.get(i);
+                        resultList[i] = tempList.get(i);
 
-                        }
-
-                        if(resultList.length > 0) {
-
-                            final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
-
-                            //Assign new adapter to ListView
-                            allContacts.setAdapter(adapter);
-                        }
-
-                        else setDefault();
                     }
 
-                    return false;
+                    if (resultList.length > 0) {
+
+                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+
+                        //Assign new adapter to ListView
+                        allContacts.setAdapter(adapter);
+                    } else setDefault();
                 }
 
-            });
+                return false;
+            }
 
-            //ListView Item Click Listener
-            allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        });
 
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
-                }
-             });
-        }
+        //ListView Item Click Listener
+        allContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-    public  void setDefault () {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+            }
+        });
+    }
 
-        String[] defaultList = {getString(string.player1),getString(string.player2) ,getString(string.dots),getString(string.playerN)};
+    public void setDefault() {
+
+        String[] defaultList = {getString(string.player1), getString(string.player2), getString(string.dots), getString(string.playerN)};
 
         final ListAdapter def = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, defaultList);
 
-        final ListView allContacts = (ListView)findViewById(R.id.listView);
+        final ListView allContacts = (ListView) findViewById(R.id.listView);
 
         //Assign default adapter to ListView
         allContacts.setAdapter(def);
 
     }
 
-    public boolean isDefault(String[] resultList){
+    public boolean isDefault(String[] resultList) {
 
-        String[] defaultList = {getString(string.player1),getString(string.player2) ,getString(string.dots),getString(string.playerN)};
+        String[] defaultList = {getString(string.player1), getString(string.player2), getString(string.dots), getString(string.playerN)};
 
         return Arrays.equals(resultList, defaultList);
 
     }
 
+    private void startContactActivity() {
+        Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
+        intent.putExtra("ownList", resultList);
+        startActivity(intent);
     }
+
+
+    private void showContactActivity() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                == PackageManager.PERMISSION_GRANTED) {
+            startContactActivity();
+        } else {
+            requestReadContactsPermission();
+        }
+    }
+
+    public void requestReadContactsPermission() {
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            ActivityCompat.requestPermissions(StartActivity.this,
+                    new String[]{Manifest.permission.READ_CONTACTS},
+                    PERMISSION_REQUEST_READ_CONTACTS);
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_READ_CONTACTS);
+        }
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSION_REQUEST_READ_CONTACTS: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    this.PERMISSION_GRANTED = true;
+                } else {
+                    this.PERMISSION_GRANTED = false;
+                }
+                return;
+            }
+        }
+    }
+
+}
 
 

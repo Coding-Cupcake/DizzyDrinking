@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.patrick.dizzydrinking" >
 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -49,6 +51,10 @@
         </activity>
         <activity
             android:name=".InfoActivity"
+            android:label="@string/dizzy" >
+        </activity>
+        <activity
+            android:name=".PrivacyPolicyActivity"
             android:label="@string/dizzy" >
         </activity>
     </application>

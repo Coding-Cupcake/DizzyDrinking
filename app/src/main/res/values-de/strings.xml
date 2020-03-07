@@ -55,5 +55,4 @@
     <string name="title_activity_design">DesignActivity</string>
     <string name="title_activity_info">InfoActivity</string>
 
-    <string name="contactPickerNoSupport">Kontaktauswahl wird derzeit nicht unterstützt. Bitte nutze die Textbox zur Namenseingabe.</string>
 </resources>

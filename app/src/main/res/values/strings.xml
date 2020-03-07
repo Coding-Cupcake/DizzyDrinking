@@ -55,6 +55,6 @@
     <string name="quitGame">Whenever you choose <i>Main Menu</i> out of any menu you get back to the main menu and quit your current game. Only your player list will be stored, but if desired you can delete the whole list via <i>Delete players</i> in the menu.</string>
     <string name="info">Since this game features alcohol, please drink responsibly. You can play the game with soft drinks as well. Enjoy the game!</string>
 
-    <string name="contactPickerNoSupport">Contact picking is currently not supported. Please enter the names into the text box.</string>
+    <string name="privacy">Privacy Policy https://sites.google.com/view/dizzy-drinking-privacy/home</string>
 
 </resources>

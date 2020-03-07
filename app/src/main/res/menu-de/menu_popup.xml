@@ -17,6 +17,11 @@
         android:icon="@drawable/ic_clear_normal"/>
 
     <item
+        android:id="@+id/privacy"
+        android:title="Datenschutz"
+        android:icon="@drawable/ic_clear_normal"/>
+
+    <item
         android:id="@+id/quitApp"
         android:title="Beenden"
         android:icon="@drawable/ic_clear_normal"/>
