@@ -72,9 +72,6 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(getApplicationContext(),
-                        //PrivacyPolicyActivity.class);
-                //startActivity(intent);
                 showContactActivity();
             }
         });
@@ -129,9 +126,9 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                 }
 
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
-                        InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
+                if (getCurrentFocus() != null)
+                    imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
             }
         });
