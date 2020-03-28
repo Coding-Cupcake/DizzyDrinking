@@ -106,6 +106,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
         if (caller.equals("START")) {
             Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+            intent.putExtra("resultList", getIntent().getStringArrayExtra("resultList"));
             startActivity(intent);
             finish();
 

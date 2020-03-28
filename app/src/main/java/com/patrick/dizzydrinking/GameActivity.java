@@ -172,6 +172,7 @@ public class GameActivity extends AppCompatActivity {
                     case "Hauptmenü":
                         Intent intentStart = new Intent(getApplicationContext(), StartActivity.class);
                         intentStart.putExtra("mode", mod);
+                        intentStart.putExtra("resultList", allPlayers);
                         startActivity(intentStart);
                         finish();
                         break;

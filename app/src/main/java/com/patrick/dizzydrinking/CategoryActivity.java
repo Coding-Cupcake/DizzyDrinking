@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class CategoryActivity extends AppCompatActivity {
 
     private String[] players;
-    public  boolean mod;
+    public boolean mod;
     private ArrayList<String> gamesClassic;
     private ArrayList<String> gamesDaring;
 
@@ -40,7 +40,7 @@ public class CategoryActivity extends AppCompatActivity {
         //Set the font
         Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
-        final Button cat = (Button)findViewById(R.id.button2);
+        final Button cat = (Button) findViewById(R.id.button2);
         cat.setTypeface(myFont);
 
         //Retrieve booleans
@@ -51,16 +51,15 @@ public class CategoryActivity extends AppCompatActivity {
         gamesDaring = getIntent().getStringArrayListExtra("gamesDaring");
 
         //Classic
-        ImageView classic = (ImageView)findViewById(R.id.classic);
+        ImageView classic = (ImageView) findViewById(R.id.classic);
         classic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(gamesClassic != null && gamesClassic.size() == 0) {
-                    Toast.makeText(getApplicationContext(),R.string.noClassics, Toast.LENGTH_LONG).show();
-                }
-                else{
-                    Intent intent = new Intent(getApplicationContext(),GameActivity.class);
+                if (gamesClassic != null && gamesClassic.size() == 0) {
+                    Toast.makeText(getApplicationContext(), R.string.noClassics, Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), GameActivity.class);
                     intent.putExtra("category", 0);
                     intent.putExtra("players", players);
                     intent.putExtra("mode", mod);
@@ -74,16 +73,15 @@ public class CategoryActivity extends AppCompatActivity {
         });
 
         //Daring
-        ImageView daring = (ImageView)findViewById(R.id.daring);
+        ImageView daring = (ImageView) findViewById(R.id.daring);
         daring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(gamesDaring != null && gamesDaring.size() == 0) {
-                    Toast.makeText(getApplicationContext(),R.string.noDaring, Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Intent intent = new Intent(getApplicationContext(),GameActivity.class);
+                if (gamesDaring != null && gamesDaring.size() == 0) {
+                    Toast.makeText(getApplicationContext(), R.string.noDaring, Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent = new Intent(getApplicationContext(), GameActivity.class);
                     intent.putExtra("category", 1);
                     intent.putExtra("players", players);
                     intent.putExtra("mode", mod);
@@ -96,12 +94,12 @@ public class CategoryActivity extends AppCompatActivity {
             }
         });
 
-        if(gamesDaring != null && gamesDaring.size() == 0 && gamesClassic != null && gamesClassic.size() == 0) {
+        if (gamesDaring != null && gamesDaring.size() == 0 && gamesClassic != null && gamesClassic.size() == 0) {
             classic.setClickable(false);
             daring.setClickable(false);
 
-            for(int i = 0; i < 2; i++)
-                Toast.makeText(getApplicationContext(),R.string.noGames, Toast.LENGTH_LONG).show();
+            for (int i = 0; i < 2; i++)
+                Toast.makeText(getApplicationContext(), R.string.noGames, Toast.LENGTH_LONG).show();
         }
 
     }
@@ -150,10 +148,12 @@ public class CategoryActivity extends AppCompatActivity {
 
 
                     case "Main Menu":
-                    case "Hauptmenü" :  Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                        break;
+                    case "Hauptmenü":
+                        Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                        intent.putExtra("resultList", players);
+                        startActivity(intent);
+                        finish();
+                        break;
 
                 }
 
@@ -163,5 +163,6 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {}
+    public void onBackPressed() {
+    }
 }

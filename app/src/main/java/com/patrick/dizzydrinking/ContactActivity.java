@@ -18,6 +18,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 
 
 public class ContactActivity extends ListActivity {
@@ -40,6 +43,19 @@ public class ContactActivity extends ListActivity {
         Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
         partialContactList = new ArrayList<>();
+        final ArrayList<String> currentUserList;
+
+        if (getIntent().getStringArrayExtra(("ownList")) != null)
+            currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+        else currentUserList = new ArrayList<>();
+        for (String currentUser : currentUserList) {
+            for (int i = 0; i < allContacts.length; i++) {
+                if (currentUser.equals(allContacts[i])) {
+                    partialContactList.add(currentUser);
+                }
+
+            }
+        }
 
         contactList = new ArrayList<>();
         Cursor phones;
@@ -61,17 +77,31 @@ public class ContactActivity extends ListActivity {
         }
         allContacts = list;
 
-        ListView listview = getListView();
+        final ListView listview = getListView();
         listview.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
 
         listview.setTextFilterEnabled(true);
         Arrays.sort(allContacts);
+
 
         //Choose Names
         Button chooseNames = (Button) findViewById(R.id.chooseNames);
         chooseNames.setTypeface(myFont);
 
         setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, allContacts));
+
+        final ArrayList<String> currentUserList2;
+        if (getIntent().getStringArrayExtra(("ownList")) != null)
+            currentUserList2 = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+        else currentUserList2 = new ArrayList<>();
+
+        //Check already selected users
+        for (String currentlyExistingEntry : currentUserList2) {
+            for (int i = 0; i < allContacts.length; i++) {
+                if (currentlyExistingEntry.equals(allContacts[i]))
+                    listview.setItemChecked(i, true);
+            }
+        }
 
 
         //Send Button
@@ -81,8 +111,31 @@ public class ContactActivity extends ListActivity {
             @Override
             public void onClick(View v) {
 
+                ArrayList<String> currentUserList;
+                ArrayList<String> toBeRemoved = new ArrayList<>();
+
                 if (getIntent().getStringArrayExtra(("ownList")) != null)
-                    partialContactList.addAll(Arrays.asList(getIntent().getStringArrayExtra("ownList")));
+                    currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+                else currentUserList = new ArrayList<>();
+
+                for (String currentUser : currentUserList) {
+                    for (int i = 0; i < allContacts.length; i++) {
+                        if (currentUser.equals(allContacts[i]) && !listview.isItemChecked(i)) {
+                            toBeRemoved.add(currentUser);
+                        }
+
+                    }
+                }
+
+                currentUserList.removeAll(toBeRemoved);
+
+
+                if (currentUserList != null) {
+                    for (String user : currentUserList) {
+                        if (!partialContactList.contains(user))
+                            partialContactList.add(user);
+                    }
+                }
 
                 chosenContacts = new String[partialContactList.size()];
 
@@ -107,6 +160,7 @@ public class ContactActivity extends ListActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                intent.putExtra("resultList", getIntent().getStringArrayExtra(("ownList")));
                 startActivity(intent);
 
             }

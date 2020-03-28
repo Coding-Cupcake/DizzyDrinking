@@ -72,8 +72,8 @@ public class InfoActivity extends AppCompatActivity {
                 switch (item.toString()) {
 
                     case "Back":
-                    case "Zurück":  switching();
-
+                    case "Zurück":
+                        switching();
 
 
                 }
@@ -84,15 +84,15 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed()
-    {
-       switching();
+    public void onBackPressed() {
+        switching();
     }
 
-    public void switching(){
+    public void switching() {
 
-        if(caller.equals("START")) {
+        if (caller.equals("START")) {
             Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+            intent.putExtra("resultList", getIntent().getStringArrayExtra("resultList"));
             startActivity(intent);
             finish();
 

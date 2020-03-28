@@ -117,9 +117,25 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
                     }
 
-                    Arrays.sort(resultList);
+                    final ListAdapter adapter;
 
-                    final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+                    if (playerList != null) {
+
+                        String[] newContent = new String[playerList.length + values.length];
+                        for (int i = 0; i < playerList.length; i++)
+                            newContent[i] = playerList[i];
+                        for (int i = playerList.length; i < newContent.length; i++)
+                            newContent[i] = values[i - playerList.length];
+
+                        playerList = newContent;
+                        Arrays.sort(playerList);
+                        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
+                    } else {
+                        Arrays.sort(resultList);
+                        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+                    }
+
+
                     final ListView allContacts = (ListView) findViewById(R.id.listView);
 
                     allContacts.setAdapter(adapter);
@@ -127,8 +143,11 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
-                if (getCurrentFocus() != null)
+                if (getCurrentFocus() != null) {
                     imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.RESULT_UNCHANGED_SHOWN);
+                    EditText playersEnteredManually = findViewById(R.id.editText);
+                    playersEnteredManually.getText().clear();
+                }
 
             }
         });
@@ -140,11 +159,11 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
-                if (resultList == null || resultList.length < 2) {
+                if (playerList == null || playerList.length < 2) {
                     Toast.makeText(getApplicationContext(), getString(string.emptyList), Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), CategoryActivity.class);
-                    intent.putExtra("players", resultList);
+                    intent.putExtra("players", playerList);
                     intent.putExtra("mode", normalMod);
                     startActivity(intent);
                 }
@@ -220,6 +239,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                     case "Informationen":
                         Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
                         intent.putExtra("Caller", "START");
+                        intent.putExtra("resultList", playerList);
                         startActivity(intent);
                         break;
 
@@ -235,6 +255,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                     case "Privacy Policy":
                         Intent privacyIntent = new Intent(getApplicationContext(), PrivacyPolicyActivity.class);
                         privacyIntent.putExtra("Caller", "START");
+                        privacyIntent.putExtra("resultList", playerList);
                         startActivity(privacyIntent);
                         break;
 
@@ -318,9 +339,16 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
         }
 
-        Arrays.sort(resultList);
+        final ListAdapter adapter;
 
-        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+        if (playerList != null) {
+            Arrays.sort(playerList);
+            adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
+        } else {
+            adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+            Arrays.sort(resultList);
+        }
+
 
         if (resultList.length > 0) {
 
@@ -337,21 +365,31 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
                 ArrayList<String> tempList = new ArrayList<>();
 
-                tempList.addAll(Arrays.asList(resultList));
+                String[] finalList;
 
-                if (resultList.length > 0) {
+                if (playerList != null)
+                    finalList = playerList;
+                else finalList = resultList;
+
+                tempList.addAll(Arrays.asList(finalList));
+
+                if (finalList.length > 0) {
 
                     tempList.remove(position);
-                    resultList = new String[tempList.size()];
+                    finalList = new String[tempList.size()];
                     for (int i = 0; i < tempList.size(); i++) {
 
-                        resultList[i] = tempList.get(i);
+                        finalList[i] = tempList.get(i);
 
                     }
 
-                    if (resultList.length > 0) {
+                    if (finalList.length > 0) {
 
-                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
+                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, finalList);
+
+                        if (playerList != null)
+                            playerList = finalList;
+                        else resultList = finalList;
 
                         //Assign new adapter to ListView
                         allContacts.setAdapter(adapter);
@@ -396,7 +434,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
     private void startContactActivity() {
         Intent intent = new Intent(getApplicationContext(), ContactActivity.class);
-        intent.putExtra("ownList", resultList);
+        intent.putExtra("ownList", playerList);
         startActivity(intent);
     }
 
