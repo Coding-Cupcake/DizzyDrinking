@@ -119,6 +119,10 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
                     final ListAdapter adapter;
 
+                    if (playerList == null){
+                        playerList = new String[0];
+                    }
+
                     if (playerList != null) {
 
                         String[] newContent = new String[playerList.length + values.length];

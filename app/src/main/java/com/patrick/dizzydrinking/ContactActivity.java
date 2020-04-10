@@ -45,18 +45,6 @@ public class ContactActivity extends ListActivity {
         partialContactList = new ArrayList<>();
         final ArrayList<String> currentUserList;
 
-        if (getIntent().getStringArrayExtra(("ownList")) != null)
-            currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
-        else currentUserList = new ArrayList<>();
-        for (String currentUser : currentUserList) {
-            for (int i = 0; i < allContacts.length; i++) {
-                if (currentUser.equals(allContacts[i])) {
-                    partialContactList.add(currentUser);
-                }
-
-            }
-        }
-
         contactList = new ArrayList<>();
         Cursor phones;
 
@@ -76,6 +64,18 @@ public class ContactActivity extends ListActivity {
 
         }
         allContacts = list;
+
+        if (getIntent().getStringArrayExtra(("ownList")) != null)
+            currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+        else currentUserList = new ArrayList<>();
+        for (String currentUser : currentUserList) {
+            for (int i = 0; i < allContacts.length; i++) {
+                if (currentUser.equals(allContacts[i])) {
+                    partialContactList.add(currentUser);
+                }
+
+            }
+        }
 
         final ListView listview = getListView();
         listview.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
