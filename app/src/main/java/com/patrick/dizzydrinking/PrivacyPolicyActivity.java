@@ -106,13 +106,13 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
 
         if (caller.equals("START")) {
             Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-            intent.putExtra("resultList", getIntent().getStringArrayExtra("resultList"));
+            intent.putExtra("currentPlayerList", getIntent().getStringArrayListExtra("currentPlayerList"));
             startActivity(intent);
             finish();
 
         } else {
             Intent intent = new Intent(getApplicationContext(), GameActivity.class);
-            intent.putExtra("players", getIntent().getStringArrayExtra("players"));
+            intent.putExtra("players", getIntent().getStringArrayListExtra("players"));
             intent.putExtra("mode", getIntent().getBooleanExtra("mode", true));
             intent.putExtra("gamesClassic", getIntent().getStringArrayListExtra("gamesClassic"));
             intent.putExtra("gamesDaring", getIntent().getStringArrayListExtra("gamesDaring"));

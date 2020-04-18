@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,7 +28,7 @@ import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
 
-    private String[] allPlayers;
+    private ArrayList<String> allPlayers;
     private boolean mod;
     private int category;
     private String currentGame;
@@ -53,7 +54,7 @@ public class GameActivity extends AppCompatActivity {
         Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
         //Retrieve data
-        allPlayers = getIntent().getStringArrayExtra("players");
+        allPlayers = getIntent().getStringArrayListExtra("players");
         mod = getIntent().getBooleanExtra("mode", true);
         category = getIntent().getIntExtra("category",0);
         gamesClassic = getIntent().getStringArrayListExtra("gamesClassic");
@@ -67,7 +68,7 @@ public class GameActivity extends AppCompatActivity {
         challenge.setText(R.string.gameClassic);
         else challenge.setText(R.string.gameDaring);
 
-        String randomPlayer = (allPlayers[new Random().nextInt(allPlayers.length)]);
+        String randomPlayer = (allPlayers.get(new Random().nextInt(allPlayers.size())));
 
         //Display the challenge
         if(getIntent().getStringExtra("Caller").equals("INFO")) {
@@ -172,7 +173,7 @@ public class GameActivity extends AppCompatActivity {
                     case "Hauptmenü":
                         Intent intentStart = new Intent(getApplicationContext(), StartActivity.class);
                         intentStart.putExtra("mode", mod);
-                        intentStart.putExtra("resultList", allPlayers);
+                        intentStart.putExtra("currentPlayerList", allPlayers);
                         startActivity(intentStart);
                         finish();
                         break;

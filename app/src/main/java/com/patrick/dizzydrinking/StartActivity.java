@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static com.patrick.dizzydrinking.R.string;
 
@@ -36,8 +37,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
     private static final int PERMISSION_REQUEST_READ_CONTACTS = 0;
     private static boolean PERMISSION_GRANTED = false;
 
-    public static String[] playerList;
-    public static String[] resultList;
+    public static ArrayList<String> playerList;
     public static boolean normalMod = false;
 
     private View mLayout;
@@ -57,7 +57,10 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
         //Set the font
         Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
 
-        playerList = getIntent().getStringArrayExtra("resultList");
+        playerList = getIntent().getStringArrayListExtra("currentPlayerList");
+
+        if (playerList == null)
+            playerList = new ArrayList<>();
 
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -83,65 +86,34 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
+                initPlayerList();
+
                 EditText edit = (EditText) findViewById(R.id.editText);
                 String input = edit.getText().toString();
                 String[] values = input.split(", ");
 
-                ArrayList<String> temp = new ArrayList<>();
-                temp.addAll(Arrays.asList(values));
+                ArrayList<String> cleanValues = new ArrayList<>(Arrays.asList(values));
+                for (String val : cleanValues)
+                    if (val.equals("")) cleanValues.remove(val);
 
-                for (String player : temp) {
-                    if (player.isEmpty())
-                        temp.remove(player);
+
+                for (String player : cleanValues) {
+                    if (!playerList.contains(player))
+                        playerList.add(player);
                 }
 
-
-                if (resultList != null) for (String s : resultList) {
-                    if (!temp.contains(s)) {
-                        temp.add(s);
-                    }
-                }
-
-
-                if (resultList != null && resultList.length == 0 && temp.isEmpty()) {
+                if (playerList.isEmpty()) {
 
                     setDefault();
                     Toast.makeText(getApplicationContext(), getString(string.playersNr), Toast.LENGTH_SHORT).show();
 
                 } else {
-                    resultList = new String[temp.size()];
-
-                    for (int i = 0; i < temp.size(); i++) {
-
-                        resultList[i] = temp.get(i);
-
-                    }
 
                     final ListAdapter adapter;
-
-                    if (playerList == null){
-                        playerList = new String[0];
-                    }
-
-                    if (playerList != null) {
-
-                        String[] newContent = new String[playerList.length + values.length];
-                        for (int i = 0; i < playerList.length; i++)
-                            newContent[i] = playerList[i];
-                        for (int i = playerList.length; i < newContent.length; i++)
-                            newContent[i] = values[i - playerList.length];
-
-                        playerList = newContent;
-                        Arrays.sort(playerList);
-                        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
-                    } else {
-                        Arrays.sort(resultList);
-                        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
-                    }
-
+                    Collections.sort(playerList);
+                    adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
 
                     final ListView allContacts = (ListView) findViewById(R.id.listView);
-
                     allContacts.setAdapter(adapter);
                 }
 
@@ -163,7 +135,9 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
             @Override
             public void onClick(View v) {
 
-                if (playerList == null || playerList.length < 2) {
+                initPlayerList();
+
+                if (playerList.size() < 2) {
                     Toast.makeText(getApplicationContext(), getString(string.emptyList), Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(getApplicationContext(), CategoryActivity.class);
@@ -235,7 +209,6 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                     case "Reset Players":
                     case "Spieler zurücksetzen":
                         setDefault();
-                        resultList = null;
                         playerList = null;
                         break;
 
@@ -243,7 +216,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                     case "Informationen":
                         Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
                         intent.putExtra("Caller", "START");
-                        intent.putExtra("resultList", playerList);
+                        intent.putExtra("currentPlayerList", playerList);
                         startActivity(intent);
                         break;
 
@@ -259,7 +232,7 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                     case "Privacy Policy":
                         Intent privacyIntent = new Intent(getApplicationContext(), PrivacyPolicyActivity.class);
                         privacyIntent.putExtra("Caller", "START");
-                        privacyIntent.putExtra("resultList", playerList);
+                        privacyIntent.putExtra("currentPlayerList", playerList);
                         startActivity(privacyIntent);
                         break;
 
@@ -317,44 +290,17 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
 
     public void displayList() {
 
-        //List View
+        //List View for Players
         final ListView allContacts = (ListView) findViewById(R.id.listView);
 
 
-        ArrayList<String> temp = new ArrayList<>();
-
-        if (resultList != null) for (String s : resultList) {
-            if (!temp.contains(s)) {
-                temp.add(s);
-            }
-        }
-
-        if (playerList != null) for (String s : playerList) {
-            if (!temp.contains(s)) {
-                temp.add(s);
-            }
-        }
-
-        resultList = new String[temp.size()];
-
-        for (int i = 0; i < temp.size(); i++) {
-
-            resultList[i] = temp.get(i);
-
-        }
-
+        //Players Content List
         final ListAdapter adapter;
-
-        if (playerList != null) {
-            Arrays.sort(playerList);
-            adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
-        } else {
-            adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, resultList);
-            Arrays.sort(resultList);
-        }
+        Collections.sort(playerList);
+        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
 
 
-        if (resultList.length > 0) {
+        if (!playerList.isEmpty()) {
 
             allContacts.setAdapter(adapter);
 
@@ -367,39 +313,15 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
             public boolean onItemLongClick(AdapterView<?> parent, View view,
                                            int position, long arg3) {
 
-                ArrayList<String> tempList = new ArrayList<>();
+                if (!playerList.isEmpty()) {
+                    playerList.remove(position);
 
-                String[] finalList;
-
-                if (playerList != null)
-                    finalList = playerList;
-                else finalList = resultList;
-
-                tempList.addAll(Arrays.asList(finalList));
-
-                if (finalList.length > 0) {
-
-                    tempList.remove(position);
-                    finalList = new String[tempList.size()];
-                    for (int i = 0; i < tempList.size(); i++) {
-
-                        finalList[i] = tempList.get(i);
-
-                    }
-
-                    if (finalList.length > 0) {
-
-                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, finalList);
-
-                        if (playerList != null)
-                            playerList = finalList;
-                        else resultList = finalList;
-
+                    if (!playerList.isEmpty()) {
+                        final ListAdapter adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.list_item, playerList);
                         //Assign new adapter to ListView
                         allContacts.setAdapter(adapter);
                     } else setDefault();
                 }
-
                 return false;
             }
 
@@ -426,13 +348,8 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
         //Assign default adapter to ListView
         allContacts.setAdapter(def);
 
-    }
-
-    public boolean isDefault(String[] resultList) {
-
-        String[] defaultList = {getString(string.player1), getString(string.player2), getString(string.dots), getString(string.playerN)};
-
-        return Arrays.equals(resultList, defaultList);
+        //Reset players
+        playerList = new ArrayList<>();
 
     }
 
@@ -482,6 +399,11 @@ public class StartActivity extends AppCompatActivity implements AdapterView.OnIt
                 return;
             }
         }
+    }
+
+    public void initPlayerList(){
+        if (playerList == null)
+            playerList = new ArrayList<>();
     }
 
 }

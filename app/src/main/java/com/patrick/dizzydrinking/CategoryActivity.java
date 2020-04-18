@@ -13,12 +13,13 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
 public class CategoryActivity extends AppCompatActivity {
 
-    private String[] players;
+    private ArrayList<String> players;
     public boolean mod;
     private ArrayList<String> gamesClassic;
     private ArrayList<String> gamesDaring;
@@ -35,7 +36,7 @@ public class CategoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         //Retrieve player list
-        players = getIntent().getStringArrayExtra("players");
+        players = getIntent().getStringArrayListExtra("players");
 
         //Set the font
         Typeface myFont = Typeface.createFromAsset(getAssets(), "fonts/steelfish_rg.ttf");
@@ -150,7 +151,7 @@ public class CategoryActivity extends AppCompatActivity {
                     case "Main Menu":
                     case "Hauptmenü":
                         Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-                        intent.putExtra("resultList", players);
+                        intent.putExtra("currentPlayerList", players);
                         startActivity(intent);
                         finish();
                         break;

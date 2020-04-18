@@ -29,7 +29,6 @@ public class ContactActivity extends ListActivity {
     public static ArrayList<String> partialContactList;
 
     public static String[] allContacts;
-    public static String[] chosenContacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +64,8 @@ public class ContactActivity extends ListActivity {
         }
         allContacts = list;
 
-        if (getIntent().getStringArrayExtra(("ownList")) != null)
-            currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+        if (getIntent().getStringArrayListExtra(("ownList")) != null)
+            currentUserList = getIntent().getStringArrayListExtra(("ownList"));
         else currentUserList = new ArrayList<>();
         for (String currentUser : currentUserList) {
             for (int i = 0; i < allContacts.length; i++) {
@@ -91,8 +90,8 @@ public class ContactActivity extends ListActivity {
         setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_checked, allContacts));
 
         final ArrayList<String> currentUserList2;
-        if (getIntent().getStringArrayExtra(("ownList")) != null)
-            currentUserList2 = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+        if (getIntent().getStringArrayListExtra(("ownList")) != null)
+            currentUserList2 = getIntent().getStringArrayListExtra(("ownList"));
         else currentUserList2 = new ArrayList<>();
 
         //Check already selected users
@@ -114,8 +113,8 @@ public class ContactActivity extends ListActivity {
                 ArrayList<String> currentUserList;
                 ArrayList<String> toBeRemoved = new ArrayList<>();
 
-                if (getIntent().getStringArrayExtra(("ownList")) != null)
-                    currentUserList = new ArrayList<>(Arrays.asList(getIntent().getStringArrayExtra(("ownList"))));
+                if (getIntent().getStringArrayListExtra(("ownList")) != null)
+                    currentUserList = getIntent().getStringArrayListExtra(("ownList"));
                 else currentUserList = new ArrayList<>();
 
                 for (String currentUser : currentUserList) {
@@ -137,15 +136,14 @@ public class ContactActivity extends ListActivity {
                     }
                 }
 
-                chosenContacts = new String[partialContactList.size()];
 
-                for (int i = 0; i < partialContactList.size(); i++)
-                    chosenContacts[i] = partialContactList.get(i);
+                ArrayList<String> chosenContacts = new ArrayList<>();
+                chosenContacts.addAll(partialContactList);
 
-                Arrays.sort(chosenContacts);
+                Collections.sort(chosenContacts);
 
                 Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-                intent.putExtra("resultList", chosenContacts);
+                intent.putExtra("currentPlayerList", chosenContacts);
                 startActivity(intent);
 
             }
@@ -160,7 +158,7 @@ public class ContactActivity extends ListActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-                intent.putExtra("resultList", getIntent().getStringArrayExtra(("ownList")));
+                intent.putExtra("currentPlayerList", getIntent().getStringArrayListExtra(("ownList")));
                 startActivity(intent);
 
             }
