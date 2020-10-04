@@ -38,7 +38,7 @@
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/android:list"
+        android:id="@+id/contactList"
         android:layout_alignLeft="@+id/cancelList"
         android:layout_alignStart="@+id/cancelList"
         android:layout_marginBottom="30dp"

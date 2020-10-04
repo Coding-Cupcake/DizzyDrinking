@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">DizzyDrinking</string>
 
     <string name="hello_world">Hello world!</string>
@@ -46,7 +46,7 @@
 
 
     <string name="informationHome">Just type in the players manually, each separated by comma and space (Frodo, Sam, ...) and click the adjacent arrow button. Alternatively the contact button can be used to choose players out of your phone contacts. You can combine both procedures as well.</string>
-    <string name="informationGame">When games require arbitrary shots, that means shots without % alc./vol. declaration, the alcohol concentration does not matter. The players should think of a range before starting the game anyway.</string>
+    <string name="informationGame" tools:ignore="StringFormatInvalid">When games require arbitrary shots, that means shots without % alc./vol. declaration, the alcohol concentration does not matter. The players should think of a range before starting the game anyway.</string>
     <string name="mods">By default the <i>Unique</i> mode is set. Clicking on <i>Change Mode</i> makes it possible to change to the <i>Multi</i> mode. In the <i>Unique</i> mode every game appears only once until no more game is remaining, whereas in the <i>Multi</i> mode games can appear repeatedly.</string>
     <string name="general">The game is based on drinking shots. If no shots are available or just not desired you should talk with the other players and determine another (non)alcoholic drink to consume every time the game shows up <i>shot</i>. You do not need any other special preparation to play the games.</string>
     <string name="informationDelete">To remove a player from the list you just have to keep clicking on the corresponding name for a while.</string>
