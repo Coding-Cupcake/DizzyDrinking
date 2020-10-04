@@ -36,7 +36,6 @@
         android:textSize="20dp"
         android:text="@string/category"
         android:id="@+id/button2"
-        android:layout_below="@+id/editText"
         android:clickable="false"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
